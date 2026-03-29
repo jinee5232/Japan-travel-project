@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/japan-travel-project/', // 這裡一定要填你的 Repository 名稱，前後都要斜線
   plugins: [
     vue(),
   ],
