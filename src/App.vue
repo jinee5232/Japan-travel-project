@@ -19,16 +19,23 @@
 
 <script setup>
 import { ref, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
 import BottomNav from './components/BottomNav.vue'
 import SplashScreen from './components/SplashScreen.vue'
 
-// Module-level flag: resets on every page refresh (JS reload),
-// but survives SPA route changes within the same session.
-// ?skip=1 in URL bypasses splash for dev convenience.
+const router = useRouter()
+
+// Module-level flag resets on every page refresh
 let _splashDone = new URLSearchParams(window.location.search).has('skip')
 
+// Force back to home on any full page reload to ensure splash plays 
+// and to avoid 404 issues on static hosting refresh.
+if (window.location.hash && window.location.hash !== '#/' && !_splashDone) {
+  router.replace('/')
+}
+
 const introDone = ref(_splashDone)
-const fadingIn  = ref(_splashDone) // if skipping, start fully visible
+const fadingIn  = ref(_splashDone)
 
 async function onIntroDone() {
   _splashDone = true

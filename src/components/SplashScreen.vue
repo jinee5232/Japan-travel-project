@@ -78,6 +78,9 @@
           :style="{ filter: forestFilter }"
         />
 
+        <!-- Night Overlay (Robust darkening for mobile) -->
+        <rect width="390" height="844" fill="#040818" :opacity="c.nightA" style="pointer-events: none;" />
+
         <!-- ⑪ Cherry blossom — nalotu.svg, left side only -->
         <image
           href="/nalotu.svg"
@@ -191,6 +194,7 @@ const c = computed(() => ({
   cloudA:    kf([[0,0],[.55,0],[.7,.4],[.85,.85],[1,.95]]),
   shimA:     kf([[0,.1],[.5,.2],[1,.55]]),
   wispA:     kf([[0,0],[.55,0],[.75,.3],[1,.55]]),
+  nightA:    kf([[0, 0.92], [0.35, 0.75], [0.55, 0], [1, 0]]),
 }))
 
 /* ── Mountain image tint filter (CSS filter string) ── */
