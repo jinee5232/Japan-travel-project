@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
 
 :root {
-  /* Fuji Aesthetic Color Palette */
-  --bg-color-top: #EBF4FA;
-  --bg-color-bottom: #FFFFFF;
+  /* Fuji Aesthetic Color Palette — Warm Editorial */
+  --bg-color-top: #f9f6f1;
+  --bg-color-bottom: #f5f1eb;
   --primary-blue: #0073E6;
   --primary-light: #50A4F0;
-  --text-primary: #1F2937;
-  --text-secondary: #4B5563;
-  --text-muted: #9CA3AF;
-  
+  --text-primary: #1c1a17;
+  --text-secondary: #5a5040;
+  --text-muted: #9c8b73;
+
   /* Glassmorphism Variables */
-  --glass-bg: rgba(255, 255, 255, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.8);
-  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+  --glass-bg: rgba(255, 252, 248, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-shadow: 0 8px 32px rgba(28, 26, 23, 0.07);
   
   /* Utilities */
   --border-radius-lg: 16px;
@@ -32,7 +32,7 @@
 
 body {
   font-family: 'Inter', 'Noto Sans TC', system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, var(--bg-color-top) 0%, var(--bg-color-bottom) 100%);
+  background: var(--bg-color-top);
   background-attachment: fixed;
   color: var(--text-primary);
   min-height: 100vh;

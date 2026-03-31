@@ -321,35 +321,40 @@ export const tripData = {
     {
       id: "tokyu-hands",
       name: "東急手創館 HANDS",
-      url: "https://www.instagram.com/explore/tags/tokyuhands/",
+      url: "https://www.google.com/maps/search/東急手創館 HANDS 東京",
+      socialUrl: "https://www.instagram.com/explore/tags/tokyuhands/",
       notes: "東京文具聖地",
       image: "https://tse1.mm.bing.net/th?q=%E6%9D%B1%E6%80%A5%E3%83%8F%E3%83%B3%E3%82%BA&w=800&c=7&rs=1&pid=1.7"
     },
     {
       id: "loft",
       name: "Loft",
-      url: "https://www.loft.co.jp/",
+      url: "https://www.google.com/maps/search/loft 東京",
+      socialUrl: "https://www.loft.co.jp/",
       notes: "東京文具聖地",
       image: "https://tse1.mm.bing.net/th?q=%E6%B8%8B%E8%B0%B7%E3%83%AD%E3%83%95%E3%83%88&w=800&c=7&rs=1&pid=1.7"
     },
     {
       id: "itoya",
       name: "伊東屋 Ito-ya",
-      url: "https://www.ito-ya.co.jp/",
+      url: "https://www.google.com/maps/search/伊東屋 Ito-ya 東京",
+      socialUrl: "https://www.ito-ya.co.jp/",
       notes: "東京文具聖地",
       image: "https://tse1.mm.bing.net/th?q=%E9%8A%80%E5%BA%A7%E4%BC%8A%E6%9D%B1%E5%B1%8B&w=800&c=7&rs=1&pid=1.7"
     },
     {
       id: "travelers-factory",
       name: "Traveler's Factory",
-      url: "https://www.facebook.com/travelersfactory/?fref=ts",
+      url: "https://www.google.com/maps/search/Traveler's Factory",
+      socialUrl: "https://www.facebook.com/travelersfactory/?fref=ts",
       notes: "東京文具聖地",
       image: "https://tse1.mm.bing.net/th?q=Travelers+Factory+Tokyo&w=800&c=7&rs=1&pid=1.7"
     }
   ],
   accommodation: {
     title: "淺草、晴空塔周邊住宿 (3 臥室 / 10 人)",
-    url: "https://www.airbnb.com.tw/rooms/1548190251481148872",
+    url: "https://maps.app.goo.gl/vnBpTzeocauQc2Y78",
+    socialUrl: "https://www.airbnb.com.tw/rooms/1548190251481148872",
     checkIn: "上午 10:00",
     notes: "這是我們這趟旅程確定入住的 Airbnb。提供 3 間臥室，最多可容納 10 名房客。",
     address: "墨田區, 東京都, 日本",
