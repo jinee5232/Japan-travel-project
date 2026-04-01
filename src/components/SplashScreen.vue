@@ -45,38 +45,30 @@
         <circle :cx="195" :cy="sunY" r="82" :fill="c.sun" :opacity="c.sunDiscA" />
 
 
-        <!-- ⑦ Fuji SVG from public — positioned at bottom, color-shifted via filter -->
-        <!-- Mountain tint: dark at night, natural blue in day -->
-        <g clip-path="url(#mtClip)">
-          <image
-            href="/富士山.svg"
-            x="0" :y="mtY"
-            width="390"
-            :height="mtH"
-            preserveAspectRatio="xMidYMin meet"
-            :style="{ filter: mtFilter }"
-          />
+        <!-- Sun reflection in water (Oval linked to main sun) -->
+        <ellipse cx="195" :cy="sunReflectY" rx="72" ry="12"
+          :fill="c.sun" :opacity="c.reflectA * 0.8" />
+
+        <!-- ⑦ Reflection Group (Unified Stack) -->
+        <g :style="{ transform: `translate(0, ${horizonY}px) scale(1, -0.4) translate(0, -${horizonY}px)` }" :opacity="c.reflectA">
+          <image href="/Cloudy.svg" x="0" :y="combinedY" width="390" :height="combinedH" :style="{ filter: cloudFilter }" />
+          <image href="/Mount.svg"  x="0" :y="combinedY" width="390" :height="combinedH" :style="{ filter: mtFilter }" />
+          <image href="/forest.svg" x="0" :y="combinedY" width="390" :height="combinedH" :style="{ filter: forestFilter }" />
         </g>
 
-        <!-- ⑧ Full-width lake (bottom, behind forest) -->
-        <rect x="0" :y="lakeY" width="390" :height="844 - lakeY" fill="url(#water)" />
-
-        <!-- ⑨ Sun reflection on water -->
-        <ellipse cx="195" :cy="lakeY + 20" rx="90" ry="14"
-          :fill="c.sun" :opacity="c.reflectA" />
-
-        <!-- Water shimmer lines -->
-        <line x1="80"  :y1="lakeY + 34" x2="310" :y2="lakeY + 34" stroke="white" stroke-width="1"   :opacity="c.shimA * 0.4" />
-        <line x1="110" :y1="lakeY + 50" x2="280" :y2="lakeY + 50" stroke="white" stroke-width="0.6" :opacity="c.shimA * 0.25" />
-
-        <!-- ⑩ Forest SVG (on top of lake) -->
+        <!-- ⑧ Lake Overlay -->
         <image
-          href="/forest.svg"
-          x="0" :y="forestY"
-          width="390" :height="forestH"
-          preserveAspectRatio="xMidYMax meet"
-          :style="{ filter: forestFilter }"
+          href="/LAKE.png"
+          x="0" :y="horizonY"
+          width="390" :height="844 - horizonY"
+          preserveAspectRatio="none"
+          opacity="0.72"
         />
+
+        <!-- ⑨ Real Scene (Unified Stack) -->
+        <image href="/Cloudy.svg" x="0" :y="combinedY" width="390" :height="combinedH" :style="{ filter: cloudFilter }" />
+        <image href="/Mount.svg"  x="0" :y="combinedY" width="390" :height="combinedH" :style="{ filter: mtFilter }" />
+        <image href="/forest.svg" x="0" :y="combinedY" width="390" :height="combinedH" :style="{ filter: forestFilter }" />
 
         <!-- Night Overlay (Robust darkening for mobile) -->
         <rect width="390" height="844" fill="#040818" :opacity="c.nightA" style="pointer-events: none;" />
@@ -187,11 +179,11 @@ const c = computed(() => ({
   // mountain image tint via CSS filter (brightness + sepia for night→day)
   waterTop:  kf([[0,'#040c1c'],[.5,'#0a1838'],[.75,'#1a4860'],[1,'#4898b8']]),
   waterBot:  kf([[0,'#020810'],[.5,'#080e20'],[1,'#2a6888']]),
-  reflectA:  kf([[0,0],[.55,0],[.7,.2],[1,.15]]),
+  reflectA:  kf([[0,0],[.55,0],[.7,.65],[1,.9]]),
   tree:      kf([[0,'#020508'],[.5,'#060e10'],[.75,'#0e2818'],[1,'#184028']]),
   blossom:   kf([[0,'#1a0808'],[.5,'#3a1010'],[.75,'#e07090'],[1,'#f090a8']]),
   blossomA:  kf([[0,0],[.65,0],[.8,.5],[1,1]]),
-  cloudA:    kf([[0,0],[.55,0],[.7,.4],[.85,.85],[1,.95]]),
+  cloudA:    kf([[0,0.85],[0.5,0.9],[1,1]]),
   shimA:     kf([[0,.1],[.5,.2],[1,.55]]),
   wispA:     kf([[0,0],[.55,0],[.75,.3],[1,.55]]),
   nightA:    kf([[0, 0.92], [0.35, 0.75], [0.55, 0], [1, 0]]),
@@ -232,23 +224,44 @@ const forestFilter = computed(() => {
   return 'none'
 })
 
+const cloudFilter = computed(() => {
+  const v = p.value
+  // Clouds should be warm during sunrise, then bright white
+  if (v < 0.5) return 'brightness(0.3) saturate(0)'
+  if (v < 0.75) {
+    const t = (v - 0.5) / 0.25
+    return `brightness(${lerp(0.3, 0.9, t).toFixed(2)}) sepia(${lerp(0, 0.4, t).toFixed(2)}) saturate(1.2)`
+  }
+  return 'none'
+})
+
 /* ── Lake Y position ── */
-const forestH = Math.round(390 * 419 / 1199)  // ≈ 136px
-const forestY = 844 - forestH                  // anchored at very bottom
-const lakeY   = computed(() => 844 - 58)       // thin water strip at very bottom
-// SVG viewBox is 1203×888. We display it 390px wide.
-// Rendered height = 390 * (888/1203) ≈ 288px
-// Position mountain at bottom area, anchor at top of mountain image
-const mtH = Math.round(390 * 888 / 1203)   // ≈ 288
-const mtY = computed(() => 844 - mtH + 30)  // sits at bottom with slight overlap
+const forestH = Math.round(390 * 426 / 748)  // ≈ 222px
+const mtH     = forestH
+const combinedH = forestH
+const horizonY  = 740
+const combinedY = horizonY - combinedH
+
+// Cloud SVG: static and positioned to the right of mountain top
+const cloudW = 340
+const cloudH = Math.round(cloudW * 280 / 647) 
+const cloudY = 580  // Shifted down to match mountain position
+
+const lilyY = computed(() => 844 - 60)
 
 /* ── Sun position ── */
-// Start hidden deep in mountain area, rise to y=320 (clearly above mountain top)
+// Start hidden behind mountain (radius 82, horizon 740 -> start y < 658)
 const sunY = computed(() => {
   const v = p.value
-  if (v < 0.42) return 730
+  if (v < 0.42) return 654
   const t = (v - 0.42) / 0.58
-  return 730 - t * 370   // 730 → 360
+  return 654 - t * 334   // 654 → 320
+})
+
+// Sun reflection: Mirrored downwards as sun rises
+const sunReflectY = computed(() => {
+  const dist = horizonY - sunY.value
+  return horizonY + dist * 0.22  // Slower movement to stay in lake area
 })
 
 /* ── Hint: visible at start, hides while dragging, fades as p rises ── */
