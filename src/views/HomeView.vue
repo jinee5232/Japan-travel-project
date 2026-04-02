@@ -120,7 +120,7 @@ const slides = [
   {
     label: 'Day 4–5 · Mt.Fuji',
     title: '富士山 攻頂',
-    sub: '吉田路線・御來光・缽巡',
+    sub: '富士宮路線・御來光・劍峰',
     img: 'https://images.pexels.com/photos/33368129/pexels-photo-33368129.jpeg?auto=compress&cs=tinysrgb&w=800',
     pos: 'center',
   },
@@ -491,6 +491,7 @@ onUnmounted(() => {
   text-transform: uppercase;
   color: #9c8b73;
   margin-top: 4px;
+  white-space: nowrap;
 }
 
 .count-divider {
