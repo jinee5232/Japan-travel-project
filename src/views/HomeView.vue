@@ -38,7 +38,7 @@
     <section class="identity-section">
       <div class="identity-eyebrow">Japan Trip 2026</div>
       <h1 class="identity-heading">日本富士山之旅</h1>
-      <p class="identity-date">2026.07.29 — 08.02</p>
+      <p class="identity-date">2026.07.29 — 08.04</p>
       <div class="countdown-wrap" v-if="daysLeft > 0">
         <div class="count-block">
           <span class="count-num">{{ daysLeft }}</span>
@@ -46,7 +46,7 @@
         </div>
         <div class="count-divider"></div>
         <div class="count-block">
-          <span class="count-num">5</span>
+          <span class="count-num">7</span>
           <span class="count-label">Nights</span>
         </div>
         <div class="count-divider"></div>
