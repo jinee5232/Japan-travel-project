@@ -31,17 +31,30 @@ onMounted(() => {
     attribution: '© OpenStreetMap'
   }).addTo(map);
 
-  // Combine sightseeing and food spots
-  const allSpots = [...tripData.sightseeing, ...tripData.food];
+  // Extract all items with coordinates from themedTravel
+  const allSpots = [];
+  
+  const extractSpots = (obj) => {
+    if (!obj) return;
+    if (Array.isArray(obj)) {
+      obj.forEach(item => {
+        if (item.lat && item.lng) {
+          allSpots.push(item);
+        }
+      });
+    } else if (typeof obj === 'object') {
+      Object.values(obj).forEach(val => extractSpots(val));
+    }
+  };
+
+  extractSpots(tripData.themedTravel);
 
   const bounds = [];
 
   allSpots.forEach(spot => {
-    if (spot.lat && spot.lng) {
-      const marker = L.marker([spot.lat, spot.lng]).addTo(map);
-      marker.bindPopup(`<strong>${spot.name}</strong><br>${spot.notes || ''}`);
-      bounds.push([spot.lat, spot.lng]);
-    }
+    const marker = L.marker([spot.lat, spot.lng]).addTo(map);
+    marker.bindPopup(`<strong>${spot.name}</strong><br>${spot.notes || ''}`);
+    bounds.push([spot.lat, spot.lng]);
   });
 
   // Fit bounds to show all markers

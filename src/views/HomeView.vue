@@ -58,6 +58,7 @@
       <div class="countdown-gone" v-else>🎉 旅途愉快！</div>
     </section>
 
+
     <!-- ── Divider ── -->
     <div class="section-rule"><span>行程地圖</span></div>
 
@@ -144,6 +145,13 @@ const slides = [
     sub: '壽司・拉麵・甜點・居酒屋',
     img: 'https://images.pexels.com/photos/29089211/pexels-photo-29089211.jpeg?auto=compress&cs=tinysrgb&w=800',
     pos: 'bottom',
+  },
+  {
+    label: 'Side Trip · Karuizawa',
+    title: '輕井澤 避暑山城',
+    sub: '舊輕井澤、榆樹街、採草莓',
+    img: 'https://images.pexels.com/photos/1108117/pexels-photo-1108117.jpeg?auto=compress&cs=tinysrgb&w=800',
+    pos: 'center',
   },
 ];
 

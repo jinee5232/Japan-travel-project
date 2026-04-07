@@ -4,13 +4,9 @@
       <div class="icon material-symbols-rounded">home</div>
       <span>首頁</span>
     </router-link>
-    <router-link to="/places" class="nav-item" active-class="active">
-      <div class="icon material-symbols-rounded">location_on</div>
-      <span>景點</span>
-    </router-link>
-    <router-link to="/shopping" class="nav-item" active-class="active">
-      <div class="icon material-symbols-rounded">local_mall</div>
-      <span>購物</span>
+    <router-link to="/travel" class="nav-item" active-class="active">
+      <div class="icon material-symbols-rounded">explore</div>
+      <span>旅遊</span>
     </router-link>
     <router-link to="/mounting" class="nav-item" active-class="active">
       <div class="icon material-symbols-rounded">landscape</div>
@@ -23,6 +19,9 @@
   </nav>
 </template>
 
+<script setup>
+</script>
+
 <style scoped>
 .bottom-nav {
   position: fixed;
@@ -30,13 +29,14 @@
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 32px);
-  max-width: 568px; /* Slightly less than app wrapper */
+  max-width: 568px;
   display: flex;
   justify-content: space-around;
   padding: 12px 0;
   border-radius: var(--border-radius-pill);
   z-index: 100;
   border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
 }
 
 .nav-item {
@@ -46,6 +46,7 @@
   color: var(--text-secondary);
   transition: all 0.3s ease;
   flex: 1;
+  text-decoration: none;
 }
 
 .nav-item .icon {
