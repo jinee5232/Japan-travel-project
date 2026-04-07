@@ -7,51 +7,69 @@
 
     <section class="card-outline glass-panel mb-6">
       <div class="card-header">
-        <h2 class="text-xl font-bold">🧗 野貓團隊 87cat</h2>
+        <h2 class="text-xl font-bold flex items-center gap-2">
+          <span class="material-symbols-rounded">hiking</span> 野貓團隊 87cat
+        </h2>
       </div>
       <div class="card-body">
         <div class="meeting-point glass-card">
-          <p class="font-bold text-primary-blue mb-1">📍 集合地點與時間</p>
+          <p class="font-bold text-primary-blue mb-1 flex items-center gap-1">
+            <span class="material-symbols-rounded icon-sm">location_on</span> 集合地點與時間
+          </p>
           <p class="text-sm">{{ tripData.mountFuji.meetingPoint }}</p>
         </div>
-        <p class="mb-4 text-secondary text-sm">ℹ️ {{ tripData.mountFuji.notes }}</p>
+        <p class="mb-4 text-secondary text-sm flex items-center gap-1">
+          <span class="material-symbols-rounded icon-sm">info</span> {{ tripData.mountFuji.notes }}
+        </p>
         <a :href="tripData.mountFuji.url" target="_blank" class="action-btn">
-          🔗 旅行團官方網站
+          <span class="material-symbols-rounded icon-inline">link</span> 旅行團官方網站
         </a>
       </div>
     </section>
 
     <section class="mt-6">
-      <h3 class="section-title">🕒 兩日攻頂行程預估</h3>
+      <h3 class="section-title flex items-center gap-2">
+        <span class="material-symbols-rounded">schedule</span> 兩日攻頂行程預估
+      </h3>
       
       <div v-for="day in tripData.mountFuji.schedule" :key="day.day" class="schedule-day mb-6">
         <h4 class="day-title text-lg font-bold">{{ day.day }}</h4>
         <div class="timeline">
           <div v-for="(event, index) in day.events" :key="index" class="timeline-event">
             <div class="event-time font-mono">{{ event.time }}</div>
-            <div class="event-action">{{ event.action }}</div>
+            <div class="event-action">
+              <span v-if="event.icon" class="material-symbols-rounded icon-inline text-primary-blue">{{ event.icon }}</span>
+              {{ event.action }}
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="mt-8 mb-12">
-      <h3 class="section-title">🎒 富士山登山完全指南</h3>
+      <h3 class="section-title flex items-center gap-2">
+        <span class="material-symbols-rounded">backpack</span> 富士山登山完全指南
+      </h3>
 
       <!-- Section 1: 山屋與入住 -->
       <details class="glass-accordion mb-4" open>
-        <summary class="font-bold text-lg"><span class="title-text">🏠 山屋須知與必備物品</span><span class="material-symbols-rounded accordion-icon">expand_more</span></summary>
+        <summary class="font-bold text-lg">
+          <span class="title-text flex items-center gap-2">
+            <span class="material-symbols-rounded">home</span> 山屋須知與必備物品
+          </span>
+          <span class="material-symbols-rounded accordion-icon">expand_more</span>
+        </summary>
         <div class="accordion-content">
           <h5 class="font-bold text-primary-gray mb-2">山屋是什麼樣子？（以萬年雪山莊為例）</h5>
           <ul class="text-secondary check-list mb-4">
-            <li>🚿 無洗澡設備，山上水資源珍貴</li>
-            <li>🔌 無插座，請自備行動電源</li>
-            <li>💤 通鋪睡袋，戴耳塞防打呼</li>
-            <li>❄ 室內暖、有提供室內拖鞋（也可自帶）</li>
-            <li>🚽 山屋住客免費用廁所</li>
-            <li>🚻 公共廁所需現金（200日圓/次）、有衛生紙</li>
-            <li>🍱 晚餐是定食，份量普通，可加點（記得多帶現金）</li>
-            <li>💧 提供熱水喝（需付費）</li>
+            <li><span class="material-symbols-rounded icon-inline">shower</span> 無洗澡設備，山上水資源珍貴</li>
+            <li><span class="material-symbols-rounded icon-inline">power</span> 無插座，請自備行動電源</li>
+            <li><span class="material-symbols-rounded icon-inline">bedtime</span> 通鋪睡袋，戴耳塞防打呼</li>
+            <li><span class="material-symbols-rounded icon-inline">ac_unit</span> 室內暖、有提供室內拖鞋（也可自帶）</li>
+            <li><span class="material-symbols-rounded icon-inline">wc</span> 山屋住客免費用廁所</li>
+            <li><span class="material-symbols-rounded icon-inline">wc</span> 公共廁所需現金（200日圓/次）、有衛生紙</li>
+            <li><span class="material-symbols-rounded icon-inline">lunch_dining</span> 晚餐是定食，份量普通，可加點（記得多帶現金）</li>
+            <li><span class="material-symbols-rounded icon-inline">water_drop</span> 提供熱水喝（需付費）</li>
           </ul>
           <h5 class="font-bold text-primary-gray mb-2">入住山屋必備物品</h5>
           <ul class="text-secondary check-list">
@@ -65,11 +83,20 @@
 
       <!-- Section 2: 地形、天氣與路線 -->
       <details class="glass-accordion mb-4">
-        <summary class="font-bold text-lg"><span class="title-text">🌦 地形、天氣與路線</span><span class="material-symbols-rounded accordion-icon">expand_more</span></summary>
+        <summary class="font-bold text-lg">
+          <span class="title-text flex items-center gap-2">
+            <span class="material-symbols-rounded">landscape</span> 地形、天氣與路線
+          </span>
+          <span class="material-symbols-rounded accordion-icon">expand_more</span>
+        </summary>
         <div class="accordion-content">
-          <p class="mb-2"><strong>🟡 吉田線（人多、路長）</strong>：緩坡碎石路，人多如菜市場。上下山不同路線。滑，需登山杖＆護膝，防跌傷。</p>
-          <p class="mb-2"><strong>🔴 富士宮線（短但陡）</strong>：跨距大、有大石塊。上下山同路線。攻頂路線較短，大腿肌力重要。</p>
-          <p class="mb-4"><strong>🔥 共同提醒</strong>：無遮蔽物，防風防曬很重要！火山口風強，<strong>禁用雨傘或拖地雨衣</strong>；不建議穿雨鞋易滑倒。登山杖+護膝超重要！</p>
+          <p class="mb-3 p-3 bg-blue-50/30 rounded-lg border border-blue-100">
+            <strong><span class="material-symbols-rounded icon-inline text-red-500">check_circle</span> 富士宮線（本趟預定：更短但更陡）</strong>：跨距大、有大岩石地形。上下山同路線。這是攻頂距離最短的路線，但坡度連續陡峭，對大腿肌力是個考驗。
+          </p>
+          <p class="mb-2 opacity-60">
+            <strong><span class="material-symbols-rounded icon-inline text-yellow-500">circle</span> 吉田線（人多、路長）</strong>：緩坡碎石路，登山客眾多。上下山路線不同。雖然坡度較緩但路面較滑，需注意膝蓋保護。
+          </p>
+          <p class="mb-4"><strong><span class="material-symbols-rounded icon-inline">warning</span> 共同提醒</strong>：無遮蔽物，防風防曬很重要！火山口風強，<strong>禁用雨傘或拖地雨衣</strong>；不建議穿雨鞋易滑倒。登山杖+護膝超重要！</p>
           <h5 class="font-bold text-primary-gray mb-2">天氣很瘋狂</h5>
           <ul class="text-secondary check-list">
             <li>上午晴天，下午可能突變暴雨</li>
@@ -81,7 +108,12 @@
 
       <!-- Section 3: 裝備清單 -->
       <details class="glass-accordion mb-4">
-        <summary class="font-bold text-lg"><span class="title-text">🎒 完整裝備清單</span><span class="material-symbols-rounded accordion-icon">expand_more</span></summary>
+        <summary class="font-bold text-lg">
+          <span class="title-text flex items-center gap-2">
+            <span class="material-symbols-rounded">backpack</span> 完整裝備清單
+          </span>
+          <span class="material-symbols-rounded accordion-icon">expand_more</span>
+        </summary>
         <div class="accordion-content">
           <ul class="text-secondary check-list">
             <li><strong>個人登山裝備：</strong> 登山大背包(30-60L含腰帶)、背包防雨套、內層防水大塑膠袋、登山杖2支、頭燈+備用電池。</li>
@@ -93,7 +125,12 @@
 
       <!-- Section 4: 攻頂與高山症預防 -->
       <details class="glass-accordion mb-4">
-        <summary class="font-bold text-lg"><span class="title-text">🧠 攻頂策略與高山症防護</span><span class="material-symbols-rounded accordion-icon">expand_more</span></summary>
+        <summary class="font-bold text-lg">
+          <span class="title-text flex items-center gap-2">
+            <span class="material-symbols-rounded">health_and_safety</span> 攻頂策略與高山症防護
+          </span>
+          <span class="material-symbols-rounded accordion-icon">expand_more</span>
+        </summary>
         <div class="accordion-content">
           <h5 class="font-bold text-primary-gray mb-2">攻頂注意事項</h5>
           <ul class="text-secondary check-list mb-4">
@@ -118,7 +155,12 @@
 
       <!-- Section 5: 特殊族群建議 -->
       <details class="glass-accordion mb-4">
-        <summary class="font-bold text-lg"><span class="title-text">👵🧒 長輩與小孩特別注意</span><span class="material-symbols-rounded accordion-icon">expand_more</span></summary>
+        <summary class="font-bold text-lg">
+          <span class="title-text flex items-center gap-2">
+            <span class="material-symbols-rounded">family_restroom</span> 長輩與小孩特別注意
+          </span>
+          <span class="material-symbols-rounded accordion-icon">expand_more</span>
+        </summary>
         <div class="accordion-content">
           <h5 class="font-bold text-primary-gray mb-2">小朋友登山</h5>
           <ul class="text-secondary check-list mb-4">
@@ -203,6 +245,20 @@ import { tripData } from '@/data/tripData';
   font-weight: 700;
   margin-bottom: 16px;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-inline {
+  font-size: 1.25rem !important;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.icon-sm {
+  font-size: 1rem !important;
+  vertical-align: middle;
 }
 
 .schedule-day {
@@ -263,6 +319,14 @@ import { tripData } from '@/data/tripData';
   color: var(--text-primary);
   line-height: 1.5;
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.event-action .material-symbols-rounded {
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .event-action::before {

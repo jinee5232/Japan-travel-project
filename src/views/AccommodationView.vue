@@ -4,14 +4,16 @@
     <header class="hero-header">
       <div class="hero-bg-overlay"></div>
       <div class="hero-content">
-        <div class="hero-badge">🏠 Airbnb 住宿</div>
+        <div class="hero-badge">
+          <span class="material-symbols-rounded icon-badge">home</span> Airbnb 住宿
+        </div>
         <h1 class="hero-title">Clavis Asakusa Skytree</h1>
         <p class="hero-subtitle">都市旅館風格・融合東方美學</p>
         <div class="hero-meta">
-          <span class="meta-pill">📍 墨田區</span>
-          <span class="meta-pill">👥 最多 10 人</span>
-          <span class="meta-pill">🛏️ 3 臥室</span>
-          <span class="meta-pill">📐 97㎡</span>
+          <span class="meta-pill"><span class="material-symbols-rounded icon-pill">location_on</span> 墨田區</span>
+          <span class="meta-pill"><span class="material-symbols-rounded icon-pill">group</span> 最多 10 人</span>
+          <span class="meta-pill"><span class="material-symbols-rounded icon-pill">bed</span> 3 臥室</span>
+          <span class="meta-pill"><span class="material-symbols-rounded icon-pill">square_foot</span> 97㎡</span>
         </div>
       </div>
     </header>
@@ -19,24 +21,24 @@
     <!-- Quick Links -->
     <div class="action-row">
       <a :href="accommodation.url" target="_blank" class="action-btn btn-map">
-        <span class="btn-icon">📍</span>
+        <span class="material-symbols-rounded">location_on</span>
         <span>Google 地圖</span>
       </a>
       <a :href="accommodation.socialUrl" target="_blank" class="action-btn btn-airbnb">
-        <span class="btn-icon">🏠</span>
+        <span class="material-symbols-rounded">home</span>
         <span>Airbnb 頁面</span>
       </a>
     </div>
 
     <!-- Notice Banner -->
     <div class="notice-banner">
-      <span class="notice-icon">⚠️</span>
+      <span class="material-symbols-rounded notice-icon">warning</span>
       <span>請注意：本公寓<strong>沒有電梯</strong>，請自行安排行李搬運。</span>
     </div>
 
     <!-- Description -->
     <section class="glass-section">
-      <h2 class="section-title">✨ 空間介紹</h2>
+      <h2 class="section-title"><span class="material-symbols-rounded">magic_button</span> 空間介紹</h2>
       <p class="desc-text">
         採用「都市旅館」的概念設計，融合了東海岸的現代風格和日本美學的寧靜優雅。
         室內有受日本大自然和傳統日本藝術啟發的藝術品和織物，營造出精緻和現代的日本氛圍。
@@ -45,10 +47,10 @@
 
     <!-- Transport Highlights -->
     <section class="glass-section">
-      <h2 class="section-title">🚇 交通資訊</h2>
+      <h2 class="section-title"><span class="material-symbols-rounded">directions_subway</span> 交通資訊</h2>
       <div class="transport-grid">
         <div class="transport-card">
-          <div class="transport-icon">🚶</div>
+          <div class="material-symbols-rounded transport-icon">directions_walk</div>
           <div class="transport-info">
             <div class="transport-name">本所吾妻橋站</div>
             <div class="transport-time">步行 3 分鐘</div>
@@ -56,7 +58,7 @@
           </div>
         </div>
         <div class="transport-card">
-          <div class="transport-icon">🗼</div>
+          <div class="material-symbols-rounded transport-icon">location_city</div>
           <div class="transport-info">
             <div class="transport-name">東京晴空塔</div>
             <div class="transport-time">步行 10-11 分鐘</div>
@@ -64,7 +66,7 @@
           </div>
         </div>
         <div class="transport-card">
-          <div class="transport-icon">✈️</div>
+          <div class="material-symbols-rounded transport-icon">flight</div>
           <div class="transport-info">
             <div class="transport-name">羽田機場</div>
             <div class="transport-time">約 50 分鐘</div>
@@ -72,7 +74,7 @@
           </div>
         </div>
         <div class="transport-card">
-          <div class="transport-icon">🛫</div>
+          <div class="material-symbols-rounded transport-icon">flight_takeoff</div>
           <div class="transport-info">
             <div class="transport-name">成田機場</div>
             <div class="transport-time">約 60 分鐘</div>
@@ -84,7 +86,7 @@
 
     <!-- Check-in Info -->
     <section class="glass-section">
-      <h2 class="section-title">📅 入住資訊</h2>
+      <h2 class="section-title"><span class="material-symbols-rounded">calendar_today</span> 入住資訊</h2>
       <div class="info-rows">
         <div class="info-row">
           <span class="info-label">最早入住</span>
@@ -108,26 +110,26 @@
         </div>
         <div class="info-row">
           <span class="info-label">電梯</span>
-          <span class="info-value warn">❌ 無電梯</span>
+          <span class="info-value warn"><span class="material-symbols-rounded icon-inline">close</span> 無電梯</span>
         </div>
       </div>
     </section>
 
     <!-- Bedrooms -->
     <section class="glass-section">
-      <h2 class="section-title">🛏️ 臥室配置</h2>
+      <h2 class="section-title"><span class="material-symbols-rounded">bed</span> 臥室配置</h2>
       <div class="room-grid">
         <div class="room-card">
           <div class="room-number">臥室 1</div>
-          <div class="room-bed">🛏️ 雙人床 × 1</div>
+          <div class="room-bed"><span class="material-symbols-rounded icon-inline">bed</span> 雙人床 × 1</div>
         </div>
         <div class="room-card">
           <div class="room-number">臥室 2</div>
-          <div class="room-bed">🛏️ 雙人床 × 1</div>
+          <div class="room-bed"><span class="material-symbols-rounded icon-inline">bed</span> 雙人床 × 1</div>
         </div>
         <div class="room-card room-card--special">
           <div class="room-number">臥室 3 (閣樓)</div>
-          <div class="room-bed">🛏️ 雙人床 × 1 + 單人床 × 1</div>
+          <div class="room-bed"><span class="material-symbols-rounded icon-inline">bed</span> 雙人床 × 1 + 單人床 × 1</div>
           <div class="room-extra">＋閣樓區額外 3 套日式床墊<br><span class="text-muted-sm">（可依喜好擺放）</span></div>
         </div>
       </div>
@@ -135,10 +137,10 @@
 
     <!-- Amenities Grid -->
     <section class="glass-section">
-      <h2 class="section-title">🍳 廚房與餐廳</h2>
+      <h2 class="section-title"><span class="material-symbols-rounded">cooking</span> 廚房與餐廳</h2>
       <div class="amenities-grid">
         <div class="amenity-item" v-for="item in kitchenItems" :key="item.icon">
-          <span class="amenity-icon">{{ item.icon }}</span>
+          <span class="material-symbols-rounded amenity-icon">{{ item.icon }}</span>
           <span class="amenity-label">{{ item.label }}</span>
         </div>
       </div>
@@ -146,20 +148,24 @@
 
     <!-- Bathroom -->
     <section class="glass-section">
-      <h2 class="section-title">🚿 衛浴設備</h2>
+      <h2 class="section-title"><span class="material-symbols-rounded">shower</span> 衛浴設備</h2>
       <div class="bathroom-grid">
         <div class="bathroom-card">
-          <div class="bathroom-heading">🚽 洗手間 × 2</div>
-          <p class="bathroom-desc">配有智慧型坐浴盆</p>
+          <div class="bathroom-heading">
+            <span class="material-symbols-rounded icon-header text-primary-blue">wc</span> 洗手間 × 2
+          </div>
+          <p class="bathroom-desc">配有智慧型旗艦坐浴盆 (Washlet)</p>
         </div>
         <div class="bathroom-card">
-          <div class="bathroom-heading">🚿 淋浴間 × 2</div>
-          <p class="bathroom-desc">洗髮精、潤髮乳、香皂</p>
+          <div class="bathroom-heading">
+            <span class="material-symbols-rounded icon-header text-primary-blue">shower</span> 淋浴間 × 2
+          </div>
+          <p class="bathroom-desc">配備洗髮精、潤髮乳、香皂</p>
         </div>
       </div>
       <div class="amenities-grid mt-2">
         <div class="amenity-item" v-for="item in bathroomItems" :key="item.icon">
-          <span class="amenity-icon">{{ item.icon }}</span>
+          <span class="material-symbols-rounded amenity-icon">{{ item.icon }}</span>
           <span class="amenity-label">{{ item.label }}</span>
         </div>
       </div>
@@ -167,10 +173,10 @@
 
     <!-- Other Facilities -->
     <section class="glass-section">
-      <h2 class="section-title">🏠 其他設施</h2>
+      <h2 class="section-title"><span class="material-symbols-rounded">home</span> 其他設施</h2>
       <div class="amenities-grid">
         <div class="amenity-item" v-for="item in otherItems" :key="item.icon">
-          <span class="amenity-icon">{{ item.icon }}</span>
+          <span class="material-symbols-rounded amenity-icon">{{ item.icon }}</span>
           <span class="amenity-label">{{ item.label }}</span>
         </div>
       </div>
@@ -178,10 +184,10 @@
 
     <!-- Nearby Spots -->
     <section class="glass-section">
-      <h2 class="section-title">📍 周邊便利設施</h2>
+      <h2 class="section-title"><span class="material-symbols-rounded">location_on</span> 周邊便利設施</h2>
       <div class="nearby-list">
         <div class="nearby-item" v-for="spot in nearbySpots" :key="spot.name">
-          <span class="nearby-icon">{{ spot.icon }}</span>
+          <span class="material-symbols-rounded nearby-icon">{{ spot.icon }}</span>
           <div class="nearby-info">
             <span class="nearby-name">{{ spot.name }}</span>
             <span class="nearby-walk">{{ spot.walk }}</span>
@@ -192,14 +198,14 @@
 
     <!-- Summary Highlights -->
     <section class="glass-section highlight-section">
-      <h2 class="section-title">⭐ 住宿亮點摘要</h2>
+      <h2 class="section-title"><span class="material-symbols-rounded">star</span> 住宿亮點摘要</h2>
       <ul class="highlight-list">
-        <li>🏡 寬敞舒適，最多可入住 10 位房客</li>
-        <li>🚇 步行 3 分鐘抵達都營淺草線本所吾妻橋站</li>
-        <li>🗼 步行 11 分鐘即達東京晴空塔</li>
-        <li>📐 97㎡ 超大空間，家庭或團體皆宜</li>
-        <li>✈️ 羽田約 50 分鐘、成田約 60 分鐘可達</li>
-        <li>⏰ 最早 10:00 即可入住</li>
+        <li><span class="material-symbols-rounded icon-inline">home</span> 寬敞舒適，最多可入住 10 位房客</li>
+        <li><span class="material-symbols-rounded icon-inline">directions_subway</span> 步行 3 分鐘抵達都營淺草線本所吾妻橋站</li>
+        <li><span class="material-symbols-rounded icon-inline">location_city</span> 步行 11 分鐘即達東京晴空塔</li>
+        <li><span class="material-symbols-rounded icon-inline">square_foot</span> 97㎡ 超大空間，家庭或團體皆宜</li>
+        <li><span class="material-symbols-rounded icon-inline">flight</span> 羽田約 50 分鐘、成田約 60 分鐘可達</li>
+        <li><span class="material-symbols-rounded icon-inline">schedule</span> 最早 10:00 即可入住</li>
       </ul>
     </section>
   </main>
@@ -211,40 +217,40 @@ import { tripData } from '@/data/tripData';
 const accommodation = tripData.accommodation;
 
 const kitchenItems = [
-  { icon: '🧊', label: '冰箱' },
-  { icon: '🍳', label: '電磁爐' },
-  { icon: '📡', label: '微波爐' },
-  { icon: '🍚', label: '電鍋' },
-  { icon: '🫖', label: '電熱水壺' },
-  { icon: '📺', label: '智慧電視 (Netflix / YouTube)' },
-  { icon: '🔥', label: 'Amazon Fire TV Stick' },
-  { icon: '🍽️', label: '烹飪用具與餐具' },
-  { icon: '🧽', label: '洗碗機與海綿' },
-  { icon: '🪑', label: '餐桌 + 高腳椅' },
-  { icon: '👶', label: '兒童餐具' },
+  { icon: 'kitchen', label: '冰箱' },
+  { icon: 'cooking', label: '電磁爐' },
+  { icon: 'microwave', label: '微波爐' },
+  { icon: 'rice_bowl', label: '電鍋' },
+  { icon: 'kettle', label: '電熱水壺' },
+  { icon: 'tv', label: '智慧電視 (Netflix / YouTube)' },
+  { icon: 'tv_gen', label: 'Amazon Fire TV Stick' },
+  { icon: 'restaurant', label: '烹飪用具與餐具' },
+  { icon: 'cleaning_services', label: '洗碗機與海綿' },
+  { icon: 'chair', label: '餐桌 + 高腳椅' },
+  { icon: 'child_care', label: '兒童餐具' },
 ];
 
 const bathroomItems = [
-  { icon: '💨', label: '吹風機' },
-  { icon: '🧼', label: '洗手皂' },
-  { icon: '🛁', label: '浴巾與毛巾' },
-  { icon: '🪥', label: '一次性牙刷' },
-  { icon: '💈', label: '梳子' },
-  { icon: '🪒', label: '刮鬍刀' },
+  { icon: 'air', label: '吹風機' },
+  { icon: 'soap', label: '洗手皂' },
+  { icon: 'bathtub', label: '浴巾與毛巾' },
+  { icon: 'dentistry', label: '一次性牙刷' },
+  { icon: 'face_retouching_natural', label: '梳子' },
+  { icon: 'cleaning_services', label: '刮鬍刀' },
 ];
 
 const otherItems = [
-  { icon: '❄️', label: '空調' },
-  { icon: '📶', label: '免費 WiFi' },
-  { icon: '🫧', label: '洗衣機與洗衣精' },
+  { icon: 'ac_unit', label: '空調' },
+  { icon: 'wifi', label: '免費 WiFi' },
+  { icon: 'soap', label: '洗衣機與洗衣精' },
 ];
 
 const nearbySpots = [
-  { icon: '🏪', name: '羅森便利商店', walk: '步行 2 分鐘' },
-  { icon: '🛒', name: 'My Basket 超市', walk: '步行 4 分鐘' },
-  { icon: '💊', name: 'Drug Papas 藥妝', walk: '步行 2 分鐘' },
-  { icon: '🐟', name: '隅田水族館', walk: '步行圈內' },
-  { icon: '🌸', name: '隅田公園', walk: '步行圈內' },
+  { icon: 'storefront', name: '羅森便利商店', walk: '步行 2 分鐘' },
+  { icon: 'shopping_cart', name: 'My Basket 超市', walk: '步行 4 分鐘' },
+  { icon: 'medical_services', name: 'Drug Papas 藥妝', walk: '步行 2 分鐘' },
+  { icon: 'water', name: '隅田水族館', walk: '步行圈內' },
+  { icon: 'park', name: '隅田公園', walk: '步行圈內' },
 ];
 </script>
 
@@ -318,6 +324,34 @@ const nearbySpots = [
   font-weight: 600;
   color: rgba(255, 255, 255, 0.88);
   padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon-badge {
+  font-size: 1rem !important;
+  vertical-align: middle;
+}
+
+.icon-pill {
+  font-size: 0.9rem !important;
+}
+
+.icon-inline {
+  font-size: 1.1rem !important;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.icon-header {
+  font-size: 1.25rem !important;
+  vertical-align: middle;
+  margin-bottom: 2px;
+}
+
+.text-primary-blue {
+  color: #0073e6;
 }
 
 /* ── Action Buttons Row ── */
@@ -587,10 +621,14 @@ const nearbySpots = [
 }
 
 .bathroom-heading {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 .bathroom-desc {

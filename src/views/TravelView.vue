@@ -16,7 +16,7 @@
             class="tab-btn"
             :class="{ 'active': activeMainTab === tab.id }"
           >
-            <span class="icon">{{ tab.icon }}</span>
+            <span class="material-symbols-rounded icon">{{ tab.icon }}</span>
             <span class="label">{{ tab.label }}</span>
           </button>
         </div>
@@ -71,7 +71,10 @@
             :key="index"
             class="tip-card glass-panel p-4 mb-4"
           >
-            <h4 class="font-bold text-lg mb-2 text-primary">{{ tip.title }}</h4>
+            <h4 class="font-bold text-lg mb-2 text-primary flex items-center gap-2">
+              <span v-if="tip.icon" class="material-symbols-rounded text-primary-blue">{{ tip.icon }}</span>
+              {{ tip.title }}
+            </h4>
             <p class="text-secondary leading-relaxed">{{ tip.desc }}</p>
           </div>
         </div>
@@ -90,13 +93,13 @@ const route = useRoute();
 
 // Main Tabs config
 const mainTabs = [
-  { id: 'fuji', label: '富士山之旅', icon: '🗻' },
-  { id: 'tokyoFood', label: '東京美食', icon: '🍣' },
-  { id: 'stationery', label: '文具聖地', icon: '🖋️' },
-  { id: 'karuizawa', label: '輕井澤', icon: '🌲' }
+  { id: 'karuizawa', label: '輕井澤', icon: 'forest' },
+  { id: 'tokyoFood', label: '東京美食', icon: 'restaurant' },
+  { id: 'fuji', label: '富士山之旅', icon: 'landscape' },
+  { id: 'stationery', label: '文具聖地', icon: 'edit_note' }
 ];
 
-const activeMainTab = ref('fuji');
+const activeMainTab = ref('karuizawa');
 
 // Karuizawa Sub-tabs config
 const karuizawaTabs = [

@@ -78,11 +78,15 @@
           <span class="notice-dot"></span>
           <span class="notice-tag">4月起新制</span>
         </div>
-        <h3 class="notice-title">🔋 赴日行動電源攜帶規定</h3>
+        <h3 class="notice-title">
+          <span class="material-symbols-rounded icon-inline">battery_charging_full</span> 赴日行動電源攜帶規定
+        </h3>
         <ul class="notice-list">
           <li>每人最多攜帶 <strong>2 個</strong> 備用電池／行動電源</li>
           <li>需符合<strong>容量規定</strong>，產品上印有清晰合格標籤</li>
-          <li class="warn">⚠️ 違規者可能會被海關沒收，出發前務必檢查！</li>
+          <li class="warn">
+            <span class="material-symbols-rounded icon-inline">warning</span> 違規者可能會被海關沒收，出發前務必檢查！
+          </li>
         </ul>
         <a href="https://www.threads.net/@de3296/post/DWEXPdpk3Zp" target="_blank" class="notice-link">
           查看詳細討論 →
@@ -122,7 +126,7 @@ const slides = [
   {
     label: 'Day 4–5 · Mt.Fuji',
     title: '富士山 攻頂',
-    sub: '吉田路線・御來光・缽巡',
+    sub: '富士宮路線・御來光・缽巡',
     img: 'https://images.pexels.com/photos/33368129/pexels-photo-33368129.jpeg?auto=compress&cs=tinysrgb&w=800',
     pos: 'center',
   },
@@ -717,6 +721,14 @@ onUnmounted(() => {
   font-weight: 700;
   color: #1c1a17;
   margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-inline {
+  font-size: 1.25rem !important;
+  vertical-align: middle;
 }
 
 .notice-list {
