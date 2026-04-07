@@ -90,6 +90,10 @@
           <span class="info-label">最早入住</span>
           <span class="info-value highlight-green">上午 10:00</span>
         </div>
+         <div class="info-row">
+          <span class="info-label">最晚退房</span>
+          <span class="info-value highlight-green">上午 10:00</span>
+        </div>
         <div class="info-row">
           <span class="info-label">最多房客</span>
           <span class="info-value">10 人</span>

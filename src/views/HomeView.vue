@@ -9,8 +9,9 @@
       <div class="carousel-track" ref="trackRef" :style="trackStyle">
         <div
           class="carousel-slide"
-          v-for="slide in infiniteSlides"
+          v-for="(slide, i) in infiniteSlides"
           :key="slide.uid"
+          :class="{ active: (i % slides.length) === currentSlide }"
         >
           <img :src="slide.img" :alt="slide.title" class="slide-img" :style="{ objectPosition: slide.pos || 'center' }" />
           <div class="slide-overlay"></div>
@@ -91,7 +92,7 @@
 
     <!-- ── Footer Note ── -->
     <footer class="home-footer">
-      <p>Made with ❤️ for Japan Trip 2026</p>
+      <p>Made with JY for Japan Trip 2026</p>
     </footer>
 
   </main>
@@ -136,7 +137,7 @@ const slides = [
     label: 'Shopping · Tokyo',
     title: '東京 文具 & 藥妝',
     sub: '東急Hands・Loft・伊東屋',
-    img: 'https://images.pexels.com/photos/2614818/pexels-photo-2614818.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: 'https://media.walkerland.com.tw/wlk_media/thumbnail/images/upload/jnews/2019/11/9bdaf7b40a74aaae76b7a7a3d86aa28129d73570-800x533.webp?auto=compress&cs=tinysrgb&w=800',
     pos: 'center',
   },
   {
@@ -150,7 +151,7 @@ const slides = [
     label: 'Side Trip · Karuizawa',
     title: '輕井澤 避暑山城',
     sub: '舊輕井澤、榆樹街、採草莓',
-    img: 'https://images.pexels.com/photos/1108117/pexels-photo-1108117.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: 'https://www.likejapan.com/wp-content/uploads/2023/07/0054_24-1024x683.jpg?auto=compress&cs=tinysrgb&w=800',
     pos: 'center',
   },
 ];
@@ -167,14 +168,12 @@ const carouselRef = ref(null);
 const trackRef = ref(null);
 const SLIDE_WIDTH = ref(0);
 const currentSlide = ref(0); // 0..slides.length-1 (logical)
-
-// Pixel offset. Start at 2nd copy so we have space to go left/right
-let rawOffset = ref(0);
-let animating = false;
+const isTransitioning = ref(false);
+const rawOffset = ref(0);
 
 const trackStyle = computed(() => ({
   transform: `translateX(${rawOffset.value}px)`,
-  transition: animating ? 'none' : 'transform 0.55s cubic-bezier(0.25, 1, 0.5, 1)',
+  transition: isTransitioning.value ? 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
 }));
 
 function getSlideW() {
@@ -183,80 +182,86 @@ function getSlideW() {
 
 function initOffset() {
   SLIDE_WIDTH.value = getSlideW();
-  // Start at the CLONE_COUNT-th slide (middle copy, slide index 0)
+  isTransitioning.value = false;
+  // Start at the middle set's first slide
   rawOffset.value = -(CLONE_COUNT * SLIDE_WIDTH.value);
   currentSlide.value = 0;
 }
 
 function jumpTo(i) {
+  stopAuto();
   const sw = SLIDE_WIDTH.value || getSlideW();
-  const targetIndex = CLONE_COUNT + i; // middle set
-  rawOffset.value = -(targetIndex * sw);
+  isTransitioning.value = true;
   currentSlide.value = i;
+  rawOffset.value = -((CLONE_COUNT + i) * sw);
+  
+  setTimeout(() => {
+    checkLoop();
+    startAuto();
+  }, 800);
 }
 
 /* ── Teleport (seamless loop) ── */
 function checkLoop() {
   const sw = SLIDE_WIDTH.value || getSlideW();
   const totalSlides = slides.length;
-  const minOffset = -(CLONE_COUNT * 2 * sw); // end of 3rd copy
-  const maxOffset = -(CLONE_COUNT * sw);      // start of 2nd copy == start of 1st copy
-
-  // If drifted left into 3rd copy territory
-  if (rawOffset.value < -(CLONE_COUNT * 2 * sw - sw)) {
-    animating = true;
-    rawOffset.value += totalSlides * sw;
-    // Force reflow
-    requestAnimationFrame(() => {
-      animating = false;
-    });
+  
+  // Logical index check based on offset
+  const realIndex = Math.round(Math.abs(rawOffset.value / sw));
+  
+  if (realIndex >= CLONE_COUNT * 2) {
+    // Jump from end of 2nd set back to end of 1st set
+    isTransitioning.value = false;
+    rawOffset.value += (totalSlides * sw);
+  } else if (realIndex < CLONE_COUNT) {
+    // Jump from start of 2nd set to start of 3rd set
+    isTransitioning.value = false;
+    rawOffset.value -= (totalSlides * sw);
   }
-  // If drifted right back to 1st copy
-  if (rawOffset.value > -(CLONE_COUNT * sw - sw)) {
-    animating = true;
-    rawOffset.value -= totalSlides * sw;
-    requestAnimationFrame(() => {
-      animating = false;
-    });
-  }
-
-  // Update logical index
-  const idx = Math.abs(Math.round(rawOffset.value / sw)) % totalSlides;
-  currentSlide.value = ((idx - CLONE_COUNT) % totalSlides + totalSlides) % totalSlides;
 }
 
 /* ── Auto-scroll ── */
 let autoTimer = null;
-const AUTO_INTERVAL = 4000; // ms between auto-advance
-const AUTO_STEP_MS = 20;    // animation frame interval
-let autoAccum = 0;
+const AUTO_INTERVAL = 5000; // Stay for 5s
+
+function nextSlide() {
+  const sw = SLIDE_WIDTH.value || getSlideW();
+  isTransitioning.value = true;
+  rawOffset.value -= sw;
+  
+  // Calculate new currentSlide
+  currentSlide.value = (currentSlide.value + 1) % slides.length;
+
+  setTimeout(() => {
+    checkLoop();
+  }, 800);
+}
 
 function startAuto() {
   stopAuto();
-  autoTimer = setInterval(() => {
-    const sw = SLIDE_WIDTH.value || getSlideW();
-    autoAccum += sw / (AUTO_INTERVAL / AUTO_STEP_MS);
-    if (autoAccum >= 1) {
-      rawOffset.value -= Math.floor(autoAccum);
-      autoAccum -= Math.floor(autoAccum);
-      checkLoop();
-    }
-  }, AUTO_STEP_MS);
+  autoTimer = setInterval(nextSlide, AUTO_INTERVAL);
 }
 
 function stopAuto() {
   if (autoTimer) clearInterval(autoTimer);
   autoTimer = null;
-  autoAccum = 0;
 }
 
 /* ── Snap after user interaction ── */
 function snapNearest() {
   const sw = SLIDE_WIDTH.value || getSlideW();
-  const snapped = Math.round(rawOffset.value / sw) * sw;
-  rawOffset.value = snapped;
-  checkLoop();
-  setTimeout(() => startAuto(), 1200);
+  isTransitioning.value = true;
+  
+  const snappedIndex = Math.round(Math.abs(rawOffset.value / sw));
+  rawOffset.value = -(snappedIndex * sw);
+  
+  // Update logical index
+  currentSlide.value = (snappedIndex % slides.length);
+  
+  setTimeout(() => {
+    checkLoop();
+    startAuto();
+  }, 800);
 }
 
 /* ── Mouse Drag ── */
@@ -266,6 +271,7 @@ let isDragging = false;
 
 function onDragStart(e) {
   stopAuto();
+  isTransitioning.value = false;
   isDragging = true;
   dragStartX = e.clientX;
   dragStartOffset = rawOffset.value;
@@ -274,7 +280,6 @@ function onDragMove(e) {
   if (!isDragging) return;
   const dx = e.clientX - dragStartX;
   rawOffset.value = dragStartOffset + dx;
-  checkLoop();
 }
 function onDragEnd() {
   if (!isDragging) return;
@@ -288,13 +293,13 @@ let touchStartOffset = 0;
 
 function onTouchStart(e) {
   stopAuto();
+  isTransitioning.value = false;
   touchStartX = e.touches[0].clientX;
   touchStartOffset = rawOffset.value;
 }
 function onTouchMove(e) {
   const dx = e.touches[0].clientX - touchStartX;
   rawOffset.value = touchStartOffset + dx;
-  checkLoop();
 }
 function onTouchEnd() {
   snapNearest();
@@ -359,8 +364,15 @@ onUnmounted(() => {
   object-fit: cover;
   object-position: center;
   pointer-events: none;
-  transition: transform 0.6s ease;
+  transition: transform 1.2s ease-out;
   will-change: transform;
+  transform: scale(1.05); /* Slightly zoomed out by default */
+}
+
+/* Ken Burns Effect when active */
+.carousel-slide.active .slide-img {
+  transform: scale(1.15) translateY(-2%);
+  transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .slide-overlay {
@@ -375,8 +387,23 @@ onUnmounted(() => {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px 24px 28px;
+  padding: 24px 24px 32px;
   z-index: 2;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+  opacity: 0.9;
+  transform: translateY(0);
+}
+
+.carousel-slide.active .slide-content {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+@media (max-width: 640px) {
+  .slide-content {
+    padding: 16px 20px 24px;
+    display: block !important; /* Force visibility */
+    visibility: visible !important;
+  }
 }
 
 .slide-label {
@@ -390,18 +417,28 @@ onUnmounted(() => {
 }
 
 .slide-title {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: #ffffff;
   line-height: 1.15;
   margin-bottom: 4px;
   letter-spacing: -0.01em;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 640px) {
+  .slide-title {
+    font-size: 1.4rem;
+  }
+  .slide-sub {
+    font-size: 0.75rem;
+  }
 }
 
 .slide-sub {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.65);
-  font-weight: 400;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
 }
 
 /* Dots */

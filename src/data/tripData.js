@@ -173,7 +173,7 @@ export const tripData = {
         tag: "山梨特產",
         lat: 35.497,
         lng: 138.752,
-        image: "http://www.houtou-fudou.jp/images/slide735_a.jpg"
+        image: "https://image-cdn.hypb.st/https%3A%2F%2Fpopbee.com%2Fimage%2F2024%2F05%2Fkkjj.jpg?q=75&w=800&cbr=1&fit=max"
       },
       {
         id: "herb-hall-castella",
