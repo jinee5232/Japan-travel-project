@@ -1,7 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import PlacesView from '../views/PlacesView.vue'
-import ShoppingView from '../views/ShoppingView.vue'
+import TravelView from '../views/TravelView.vue'
 import MountingView from '../views/MountingView.vue'
 import AccommodationView from '../views/AccommodationView.vue'
 
@@ -14,14 +13,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/places',
-      name: 'places',
-      component: PlacesView
-    },
-    {
-      path: '/shopping',
-      name: 'shopping',
-      component: ShoppingView
+      path: '/travel',
+      name: 'travel',
+      component: TravelView
     },
     {
       path: '/mounting',

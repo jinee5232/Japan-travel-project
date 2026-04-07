@@ -38,7 +38,7 @@
     <section class="identity-section">
       <div class="identity-eyebrow">Japan Trip 2026</div>
       <h1 class="identity-heading">日本富士山之旅</h1>
-      <p class="identity-date">2026.07.29 — 08.02</p>
+      <p class="identity-date">2026.07.29 — 08.04</p>
       <div class="countdown-wrap" v-if="daysLeft > 0">
         <div class="count-block">
           <span class="count-num">{{ daysLeft }}</span>
@@ -46,7 +46,7 @@
         </div>
         <div class="count-divider"></div>
         <div class="count-block">
-          <span class="count-num">5</span>
+          <span class="count-num">7</span>
           <span class="count-label">Nights</span>
         </div>
         <div class="count-divider"></div>
@@ -57,6 +57,7 @@
       </div>
       <div class="countdown-gone" v-else>🎉 旅途愉快！</div>
     </section>
+
 
     <!-- ── Divider ── -->
     <div class="section-rule"><span>行程地圖</span></div>
@@ -144,6 +145,13 @@ const slides = [
     sub: '壽司・拉麵・甜點・居酒屋',
     img: 'https://images.pexels.com/photos/29089211/pexels-photo-29089211.jpeg?auto=compress&cs=tinysrgb&w=800',
     pos: 'bottom',
+  },
+  {
+    label: 'Side Trip · Karuizawa',
+    title: '輕井澤 避暑山城',
+    sub: '舊輕井澤、榆樹街、採草莓',
+    img: 'https://images.pexels.com/photos/1108117/pexels-photo-1108117.jpeg?auto=compress&cs=tinysrgb&w=800',
+    pos: 'center',
   },
 ];
 
