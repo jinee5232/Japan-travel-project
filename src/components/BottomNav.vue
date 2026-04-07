@@ -63,11 +63,11 @@
 }
 
 .nav-item.active {
-  color: var(--primary-blue);
+  color: var(--primary-green);
 }
 
 .nav-item.active .icon {
-  color: var(--primary-blue);
+  color: var(--primary-green);
   opacity: 1;
   transform: translateY(-2px) scale(1.1);
 }

@@ -172,10 +172,9 @@ onMounted(() => {
 }
 
 .tab-btn.active {
-  background: var(--primary-blue);
+  background: var(--primary-green);
   color: white;
-  border-color: var(--primary-blue);
-  box-shadow: 0 8px 16px rgba(0, 115, 230, 0.2);
+  border-color: var(--primary-green);
 }
 
 /* Sub-tabs Styling (Karuizawa) */
