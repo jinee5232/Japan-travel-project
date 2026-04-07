@@ -12,18 +12,18 @@
       </div>
       <div class="content">
         <p v-if="address" class="address text-sm text-secondary">
-          📍 {{ address }}
+          <span class="material-symbols-rounded icon-sm">location_on</span> {{ address }}
         </p>
         <p v-if="notes" class="notes text-sm text-muted">
-          ℹ️ {{ notes }}
+          <span class="material-symbols-rounded icon-sm">info</span> {{ notes }}
         </p>
       </div>
       <div v-if="url || socialUrl" class="action-buttons">
         <a v-if="url" :href="url" target="_blank" @click.stop class="action-btn map-btn">
-          📍 Google 地圖
+          <span class="material-symbols-rounded">location_on</span> Google 地圖
         </a>
         <a v-if="socialUrl" :href="socialUrl" target="_blank" @click.stop class="action-btn social-btn">
-          🔗 官方/社群資訊
+          <span class="material-symbols-rounded">link</span> 官方/社群資訊
         </a>
       </div>
     </div>
@@ -90,6 +90,14 @@ defineProps({
   margin-bottom: 4px;
   line-height: 1.4;
   color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.icon-sm {
+  font-size: 1rem !important;
+  margin-top: 2px;
 }
 
 .badge {

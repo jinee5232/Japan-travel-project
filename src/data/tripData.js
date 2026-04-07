@@ -569,15 +569,18 @@ export const tripData = {
       ],
       tips: [
         {
-          title: "🚲 交通建議：租借電動自駕車",
+          icon: "pedal_bike",
+          title: "交通建議：租借電動自駕車",
           desc: "輕井澤站前有許多租車行（推薦『白貓租車』或出口右手邊那間），建議一定要租電動版本的，騎馬路或緩坡才輕鬆。"
         },
         {
-          title: "🚄 交通票券：JR Tokyo Wide Pass",
+          icon: "train",
+          title: "交通票券：JR Tokyo Wide Pass",
           desc: "從東京搭新幹線單趟就破 5000 日圓，買『JR東京廣域周遊券』1.5萬日圓玩三天最劃算。"
         },
         {
-          title: "🍓 採草莓注意事項",
+          icon: "local_florist",
+          title: "採草莓注意事項",
           desc: "輕井澤花園農場距離車站約 15 分鐘車程（計程車約 2500~3000 yen）。建議預約最早時段，草莓最新鮮喔！"
         }
       ]
@@ -605,23 +608,23 @@ export const tripData = {
       {
         day: "Day 1 (08/01)",
         events: [
-          { time: "07:30", action: "🚌 從新宿出發，搭乘專車前往富士山" },
-          { time: "11:00", action: "⛰️ 抵達富士スバルライン五合目 (適應高度、午餐)" },
-          { time: "12:30", action: "🥾 開始登山 (吉田路線)" },
-          { time: "17:00", action: "🛖 抵達八合目山屋 (白雲莊/元祖室等)，享用晚餐" },
-          { time: "19:00", action: "💤 熄燈就寢，儲備明日攻頂體力" }
+          { time: "07:30",icon: "directions_bus", action: "從新宿出發，搭乘專車前往富士山" },
+          { time: "11:00",icon:"mountain_flag", action: "抵達富士スバルライン五合目 (適應高度、午餐)" },
+          { time: "11:30",icon:"hiking", action: "開始登山 (富士宮路線)" },
+          { time: "17:30",icon:"restaurant", action: "抵達九合目山屋 (萬年雪等)，享用晚餐" },
+          { time: "18:00",icon:"bed", action: "熄燈就寢，儲備明日攻頂體力" }
         ]
       },
       {
         day: "Day 2 (08/02)",
         events: [
-          { time: "01:30", action: "🔦 起床著裝，戴上頭燈準備夜攀" },
-          { time: "04:30", action: "🌅 抵達富士山頂！等待感動的「御來光」" },
-          { time: "05:30", action: "🌋 缽巡 (火山口周遊) 與最高峰劍峰拍照" },
-          { time: "07:00", action: "📉 開始下山 (下山道多為碎石路，需小心膝蓋)" },
-          { time: "11:30", action: "🏁 返回五合目，領取完登證明" },
-          { time: "13:00", action: "♨️ 下山洗去疲憊 (附近溫泉泡湯 + 午餐)" },
-          { time: "17:30", action: "🏙️ 專車返回新宿，行程圓滿結束" }
+          { time: "02:30",icon:"backlight_high", action: "起床著裝，戴上頭燈準備夜攀" },
+          { time: "04:30",icon:"sunny_snowing", action: "抵達富士山頂！等待感動的「御來光」" },
+          { time: "05:30",icon:"volcano", action: "缽巡 (火山口周遊) 與最高峰劍峰拍照" },
+          { time: "07:00",icon:"hiking", action: "開始下山 (下山道多為碎石路，需小心膝蓋)" },
+          { time: "11:00",icon:"kid_star", action: "返回五合目，領取完登證明" },
+          { time: "12:00",icon:"shopping_bag", action: "前往御殿場outlat" },
+          { time: "18:00",icon:"airport_shuttle", action: "專車返回新宿，行程圓滿結束" }
         ]
       }
     ]
