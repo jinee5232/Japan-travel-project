@@ -187,225 +187,393 @@ export const tripData = {
         image: "https://resize-image.vocus.cc/resize?compression=6&norotation=true&url=https%3A%2F%2Fimages.vocus.cc%2F81f3d4d9-d6fd-420e-931f-10feed0d21d6.png&width=740&sign=mGmdO9vC6_tCbhEBNCTXSCgshFXjR6H3bnSJiDLWhRw"
       }
     ],
-    tokyoFood: [
-      {
-        id: "no4-brunch",
-        name: "No.4 早午餐",
-        url: "https://maps.app.goo.gl/ASNJ7DyScg7hkVcn8?g_st=ic",
-        socialUrl:"https://www.tysons.jp/no4/",
-        notes: "人氣極高，請注意排隊時間",
-        tag: "要排隊",
-        lat: 35.6873,
-        lng: 139.7358,
-        image: "https://visit-chiyoda.com/wp-content/uploads/2023/02/Collageno41.jpg"
-      },
-      {
-        id: "washoku-hoshizora",
-        name: "星空の中へ (Washoku Hoshizora)",
-        url: "https://maps.app.goo.gl/i2KKFK2PfQBRc6xX7?g_st=ic",
-        socialUrl:"https://www.instagram.com/ddhoshizora/",
-        notes: "新宿極美的高空景觀餐廳，享受精緻日式定食",
-        tag: "高空景觀",
-        lat: 35.6895,
-        lng: 139.6917,
-        image: "https://www.ozmall.co.jp/restaurant/images/4159/r_1.jpg"
-      },
-      {
-        id: "tullys-milktea",
-        name: "Tully's Coffee",
-        url: "https://www.google.com/maps/search/Tullys+Coffee+Tokyo",
-        socialUrl: "https://www.facebook.com/share/r/16qw6AbJhq/?mibextid=wwXIfr",
-        notes: "這家的奶茶很順很好喝，推薦品嚐",
-        tag: "飲料推薦",
-        lat: 35.689,
-        lng: 139.700,
-        image: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/639970980_1468119234663199_5459755388186883855_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=kpp9nxKHoF8Q7kNvwFH25Xq&_nc_oc=AdqKwmg3ltxK8zDaqQ67d_pTYqnqwJuU9X2iCXwKz1E-vOmWo_HYe6Q8uNqruOeUatI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=30CYqfp973JzxGSGdDFo-Q&_nc_ss=7a3a8&oh=00_Af0Jq_hwe4c2Cz_eLRPdC_jfyfSk3P0Hj8waHU8xlteXfA&oe=69DA819C"
-      },
-      {
-        id: "pudding-lab-ginza",
-        name: "プリン研究所 PUDDING LAB Ginza",
-        address: "東京都中央区銀座５丁目７−10",
-        url: "https://www.google.com/maps/search/PUDDING+LAB+Ginza+5-7-10",
-        socialUrl: "https://puddinglaboratory.jp/pudding/",
-        notes: "11:00-20:00 | 知名布丁專門店",
-        tag: "甜品",
-        lat: 35.6713,
-        lng: 139.7618,
-        image: "https://www.exitmelsa.jp/dev/wp-content/uploads/2023/09/DSC01526.jpg"
-      },
-      {
-        id: "jiichiro-kitte",
-        name: "治一郎 (Jiichiro KITTE 丸之內)",
-        address: "東京都千代田區丸之內 2-7-2 1F",
-        url: "https://www.google.com/maps/search/治一郎+KITTE丸の内店",
-        socialUrl: "https://www.facebook.com/share/r/14Uyw9oK9uS/?mibextid=wwXIfr",
-        notes: "烤煎餅1400yen (全預約制，每月20號 11:00起訂，一日限16餐)",
-        tag: "排隊甜點",
-        lat: 35.6798,
-        lng: 139.7656,
-        image: "https://nash.tw/wp-content/uploads/2025/06/batch_1IMG_4560_%E6%B5%AE%E6%B0%B41-scaled.jpg"
-      },
-      {
-        id: "aux-merveilleux",
-        name: "Aux merveilleux de Fred (神樂坂)",
-        url: "https://www.google.com/maps/search/Aux+Merveilleux+de+Fred+Kagurazaka",
-        socialUrl: "https://www.facebook.com/share/r/1FRmD33Gxc/?mibextid=wwXIfr",
-        notes: "巴黎梅比爾商店，第一次登陸亞洲！",
-        tag: "知名甜點",
-        lat: 35.7011,
-        lng: 139.7377,
-        image: "https://flygba.greaterbay-airlines.com/img/Aux_Merveilleux_de_Fred_6ad6029d65.jpeg"
-      },
-      {
-        id: "tokyo-shibuya-kouno",
-        name: "河野 (涉谷 空野 豆腐)",
-        url: "https://www.google.com/maps/search/豆腐料理+空野+渋谷",
-        socialUrl: "https://www.facebook.com/share/r/1FRmD33Gxc/?mibextid=wwXIfr",
-        notes: "就像日本城堡，豆腐料理就在你面前完成",
-        tag: "體驗料理",
-        lat: 35.6548,
-        lng: 139.7040,
-        image: "https://i.autoreserve.com/thumb/800x800/restaurant_image/image/056/953/739/56953739/3072284d-c1a1-4962-b2e8-aed8661bfd3a.png?format=webp"
-      },
-      {
-        id: "caffe-michelangelo",
-        name: "米開朗基羅咖啡館 (代官山)",
-        url: "https://www.google.com/maps/search/?api=1&query=Caffe+Michelangelo+Daikanyama",
-        socialUrl: "https://www.facebook.com/share/r/1FRmD33Gxc/?mibextid=wwXIfr",
-        notes: "就像意大利宮殿，超棒的義大利菜！",
-        tag: "西式料理",
-        lat: 35.6477,
-        lng: 139.7044,
-        image: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/485981799_598020009904475_3670698969628272289_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=ekhitsZi4-8Q7kNvwHRtPuv&_nc_oc=AdrZ6gDI_uQvTNTZcsWQsXCE_oox52_rxFMroRDDNMJ1-WCVe6zYlbVDMfk5iXmSeFI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=9jyjf4hxtdtO4wO6I_wwHw&_nc_ss=7a3a8&oh=00_Af2pinIeQA0vj-Lko8qcUQSWi06XxPwRanOh7RlAsC69Cg&oe=69DA612F"
-      },
-      {
-        id: "ukai-toriyama",
-        name: "宇海鳥山 (八王子)",
-        url: "https://www.google.com/maps/search/うかい鳥山+八王子",
-        socialUrl: "https://www.ukai.co.jp/ct/toriyama/",
-        notes: "優雅的老宅餐廳風，令人感受不到是在東京內",
-        tag: "日式風情",
-        lat: 35.6424,
-        lng: 139.2787,
-        image: "https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/212658/fc020be580ebc5cef88f9e8318347a03.jpg?token=1e9b5e7&api=v2"
-      },
-      {
-        id: "donsoko-shinjuku",
-        name: "どん底 (新宿)",
-        url: "https://www.google.com/maps/search/?api=1&query=どん底+新宿",
-        socialUrl: "https://www.facebook.com/share/r/1FRmD33Gxc/?mibextid=wwXIfr",
-        notes: "彷彿吉卜力世界，許多文化人士光顧的老牌名店",
-        tag: "居酒屋",
-        lat: 35.6918,
-        lng: 139.7049,
-        image: "https://syupo.com/wp-content/uploads/2018/03/DSC09240.jpg"
-      },
-      {
-        id: "viron-shibuya",
-        name: "Brasserie VIRON 渋谷",
-        url: "https://maps.app.goo.gl/xNiZ4UcC6MHg4LXj9",
-        notes: "洋食、麵包、可麗餅",
-        tag: "法式洋食",
-        lat: 35.6603,
-        lng: 139.6976,
-        image: "https://pic.pimg.tw/ki0718/1676013044-2352329071-g.jpg"
-      },
-      {
-        id: "bouillon-de-paris",
-        name: "巴黎的葡萄酒食堂 (Bouillon de Paris a Ginza)",
-        url: "https://maps.app.goo.gl/9Tq6JtHCvJXh21ur7",
-        notes: "洋食",
-        tag: "銀座洋食",
-        lat: 35.6718,
-        lng: 139.7675,
-        image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/68/62/45/caption.jpg?w=900&h=500&s=1"
-      },
-      {
-        id: "mr-gentleman-shinjuku",
-        name: "Mr.Gentleman Neo Japan Dining",
-        url: "https://maps.app.goo.gl/r7bp76XGjxN374MC7",
-        socialUrl: "https://mr-gentleman-shinjuku.com",
-        notes: "精緻日式與洋食餐飲體驗",
-        tag: "餐廳",
-        lat: 35.6938,
-        lng: 139.7035,
-        image: "https://tw.tabiiro.travel/lpimg/gourmet/315577/main/img2.jpg"
-      },
-      {
-        id: "raku-shinjuku",
-        name: "やまと 楽 (Yamato Raku)",
-        url: "https://maps.app.goo.gl/pV4Ki7Bzum2awmiy5",
-        socialUrl: "http://www.raku-shinjuku.jp/",
-        notes: "位於新宿 Rainbow Village 4F，正宗日本料理",
-        tag: "日本料理",
-        lat: 35.6938,
-        lng: 139.7035,
-        image: "https://www.raku-shinjuku.jp/img/top/img2.jpg"
-      },
-      {
-        id: "mihama-shinjuku",
-        name: "酒場 Mihama (Sakaba Mihama)",
-        url: "https://maps.app.goo.gl/43gCYWfCskanSv3dA",
-        notes: "新宿在地人氣居酒屋",
-        tag: "居酒屋",
-        lat: 35.6938,
-        lng: 139.7035,
-        image: "https://tblg.k-img.com/restaurant/images/Rvw/313490/150x150_square_c5aa59b74a9add2070968bc99011402b.jpg"
-      },
-      {
-        id: "kaneko-hannosuke",
-        name: "稻庭烏龍麵 金子半之助 Coredo室町店",
-        url: "https://maps.app.goo.gl/RkVYBJMKkU3B48Ja9",
-        socialUrl: "https://kaneko-hannosuke.com/",
-        notes: "經典稻庭烏龍麵與天丼名店",
-        tag: "日式麵食",
-        lat: 35.6853,
-        lng: 139.7745,
-        image: "https://anise.tw/wp-content/uploads/2018/09/1537376733-64b4b495e38636e9c0f0dde3991589d6.jpg"
-      }
-    ],
-    stationery: [
-      {
-        id: "tokyu-hands",
-        name: "東急手創館 HANDS",
-        url: "https://www.google.com/maps/search/東急手創館 HANDS 東京",
-        socialUrl: "https://www.instagram.com/explore/tags/tokyuhands/",
-        notes: "東京文具聖地",
-        lat: 35.687,
-        lng: 139.702,
-        image: "https://svcstrg.cld.navitime.jp/imgfile/02301_14410351_02.jpg"
-      },
-      {
-        id: "loft",
-        name: "Loft",
-        url: "https://www.google.com/maps/search/loft 東京",
-        socialUrl: "https://www.loft.co.jp/",
-        notes: "東京文具聖地",
-        lat: 35.661,
-        lng: 139.700,
-        image: "https://cdn.bountyhunter.co/file/3c623675-f6c3-4a07-9daf-11b9d4926c64.jpg"
-      },
-      {
-        id: "itoya",
-        name: "伊東屋 Ito-ya",
-        url: "https://www.google.com/maps/search/伊東屋 Ito-ya 東京",
-        socialUrl: "https://www.ito-ya.co.jp/",
-        notes: "東京文具聖地",
-        lat: 35.672,
-        lng: 139.767,
-        image: "https://media.walkerland.com.tw/wlk_media/thumbnail/images/upload/jnews/2019/11/9bdaf7b40a74aaae76b7a7a3d86aa28129d73570-800x533.webp"
-      },
-      {
-        id: "travelers-factory",
-        name: "Traveler's Factory",
-        url: "https://www.google.com/maps/search/Traveler's Factory",
-        socialUrl: "https://www.facebook.com/travelersfactory/?fref=ts",
-        notes: "東京文具聖地",
-        lat: 35.644,
-        lng: 139.697,
-        image: "https://www.travelers-company.com/wp-content/uploads/2015/10/tfa_station.png"
-      }
-    ],
+    tokyo: {
+      food: [
+        {
+          id: "no4-brunch",
+          name: "No.4 早午餐",
+          url: "https://maps.app.goo.gl/ASNJ7DyScg7hkVcn8?g_st=ic",
+          socialUrl:"https://www.tysons.jp/no4/",
+          notes: "人氣極高，請注意排隊時間",
+          tag: "要排隊",
+          lat: 35.6873,
+          lng: 139.7358,
+          image: "https://visit-chiyoda.com/wp-content/uploads/2023/02/Collageno41.jpg"
+        },
+        {
+          id: "washoku-hoshizora",
+          name: "星空の中へ (Washoku Hoshizora)",
+          url: "https://maps.app.goo.gl/i2KKFK2PfQBRc6xX7?g_st=ic",
+          socialUrl:"https://www.instagram.com/ddhoshizora/",
+          notes: "新宿極美的高空景觀餐廳，享受精緻日式定食",
+          tag: "高空景觀",
+          lat: 35.6895,
+          lng: 139.6917,
+          image: "https://www.ozmall.co.jp/restaurant/images/4159/r_1.jpg"
+        },
+        {
+          id: "tullys-milktea",
+          name: "Tully's Coffee",
+          url: "https://www.google.com/maps/search/Tullys+Coffee+Tokyo",
+          socialUrl: "https://www.facebook.com/share/r/16qw6AbJhq/?mibextid=wwXIfr",
+          notes: "這家的奶茶很順很好喝，推薦品嚐",
+          tag: "飲料推薦",
+          lat: 35.689,
+          lng: 139.700,
+          image: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/639970980_1468119234663199_5459755388186883855_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=kpp9nxKHoF8Q7kNvwFH25Xq&_nc_oc=AdqKwmg3ltxK8zDaqQ67d_pTYqnqwJuU9X2iCXwKz1E-vOmWo_HYe6Q8uNqruOeUatI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=30CYqfp973JzxGSGdDFo-Q&_nc_ss=7a3a8&oh=00_Af0Jq_hwe4c2Cz_eLRPdC_jfyfSk3P0Hj8waHU8xlteXfA&oe=69DA819C"
+        },
+        {
+          id: "pudding-lab-ginza",
+          name: "プリン研究所 PUDDING LAB Ginza",
+          address: "東京都中央区銀座５丁目７−10",
+          url: "https://www.google.com/maps/search/PUDDING+LAB+Ginza+5-7-10",
+          socialUrl: "https://puddinglaboratory.jp/pudding/",
+          notes: "11:00-20:00 | 知名布丁專門店",
+          tag: "甜品",
+          lat: 35.6713,
+          lng: 139.7618,
+          image: "https://www.exitmelsa.jp/dev/wp-content/uploads/2023/09/DSC01526.jpg"
+        },
+        {
+          id: "jiichiro-kitte",
+          name: "治一郎 (Jiichiro KITTE 丸之內)",
+          address: "東京都千代田區丸之內 2-7-2 1F",
+          url: "https://www.google.com/maps/search/治一郎+KITTE丸の内店",
+          socialUrl: "https://www.facebook.com/share/r/14Uyw9oK9uS/?mibextid=wwXIfr",
+          notes: "烤煎餅1400yen (全預約制，每月20號 11:00起訂，一日限16餐)",
+          tag: "排隊甜點",
+          lat: 35.6798,
+          lng: 139.7656,
+          image: "https://nash.tw/wp-content/uploads/2025/06/batch_1IMG_4560_%E6%B5%AE%E6%B0%B41-scaled.jpg"
+        },
+        {
+          id: "aux-merveilleux",
+          name: "Aux merveilleux de Fred (神樂坂)",
+          url: "https://www.google.com/maps/search/Aux+Merveilleux+de+Fred+Kagurazaka",
+          socialUrl: "https://www.facebook.com/share/r/1FRmD33Gxc/?mibextid=wwXIfr",
+          notes: "巴黎梅比爾商店，第一次登陸亞洲！",
+          tag: "知名甜點",
+          lat: 35.7011,
+          lng: 139.7377,
+          image: "https://flygba.greaterbay-airlines.com/img/Aux_Merveilleux_de_Fred_6ad6029d65.jpeg"
+        },
+        {
+          id: "tokyo-shibuya-kouno",
+          name: "河野 (涉谷 空野 豆腐)",
+          url: "https://www.google.com/maps/search/豆腐料理+空野+渋谷",
+          socialUrl: "https://www.facebook.com/share/r/1FRmD33Gxc/?mibextid=wwXIfr",
+          notes: "就像日本城堡，豆腐料理就在你面前完成",
+          tag: "體驗料理",
+          lat: 35.6548,
+          lng: 139.7040,
+          image: "https://i.autoreserve.com/thumb/800x800/restaurant_image/image/056/953/739/56953739/3072284d-c1a1-4962-b2e8-aed8661bfd3a.png?format=webp"
+        },
+        {
+          id: "caffe-michelangelo",
+          name: "米開朗基羅咖啡館 (代官山)",
+          url: "https://www.google.com/maps/search/?api=1&query=Caffe+Michelangelo+Daikanyama",
+          socialUrl: "https://www.facebook.com/share/r/1FRmD33Gxc/?mibextid=wwXIfr",
+          notes: "就像意大利宮殿，超棒的義大利菜！",
+          tag: "西式料理",
+          lat: 35.6477,
+          lng: 139.7044,
+          image: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/485981799_598020009904475_3670698969628272289_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=ekhitsZi4-8Q7kNvwHRtPuv&_nc_oc=AdrZ6gDI_uQvTNTZcsWQsXCE_oox52_rxFMroRDDNMJ1-WCVe6zYlbVDMfk5iXmSeFI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=9jyjf4hxtdtO4wO6I_wwHw&_nc_ss=7a3a8&oh=00_Af2pinIeQA0vj-Lko8qcUQSWi06XxPwRanOh7RlAsC69Cg&oe=69DA612F"
+        },
+        {
+          id: "ukai-toriyama",
+          name: "宇海鳥山 (八王子)",
+          url: "https://www.google.com/maps/search/うかい鳥山+八王子",
+          socialUrl: "https://www.ukai.co.jp/ct/toriyama/",
+          notes: "優雅的老宅餐廳風，令人感受不到是在東京內",
+          tag: "日式風情",
+          lat: 35.6424,
+          lng: 139.2787,
+          image: "https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/212658/fc020be580ebc5cef88f9e8318347a03.jpg?token=1e9b5e7&api=v2"
+        },
+        {
+          id: "donsoko-shinjuku",
+          name: "どん底 (新宿)",
+          url: "https://www.google.com/maps/search/?api=1&query=どん底+新宿",
+          socialUrl: "https://www.facebook.com/share/r/1FRmD33Gxc/?mibextid=wwXIfr",
+          notes: "彷彿吉卜力世界，許多文化人士光顧的老牌名店",
+          tag: "居酒屋",
+          lat: 35.6918,
+          lng: 139.7049,
+          image: "https://syupo.com/wp-content/uploads/2018/03/DSC09240.jpg"
+        },
+        {
+          id: "viron-shibuya",
+          name: "Brasserie VIRON 渋谷",
+          url: "https://maps.app.goo.gl/xNiZ4UcC6MHg4LXj9",
+          notes: "洋食、麵包、可麗餅",
+          tag: "法式洋食",
+          lat: 35.6603,
+          lng: 139.6976,
+          image: "https://pic.pimg.tw/ki0718/1676013044-2352329071-g.jpg"
+        },
+        {
+          id: "bouillon-de-paris",
+          name: "巴黎的葡萄酒食堂 (Bouillon de Paris a Ginza)",
+          url: "https://maps.app.goo.gl/9Tq6JtHCvJXh21ur7",
+          notes: "洋食",
+          tag: "銀座洋食",
+          lat: 35.6718,
+          lng: 139.7675,
+          image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/68/62/45/caption.jpg?w=900&h=500&s=1"
+        },
+        {
+          id: "mr-gentleman-shinjuku",
+          name: "Mr.Gentleman Neo Japan Dining",
+          url: "https://maps.app.goo.gl/r7bp76XGjxN374MC7",
+          socialUrl: "https://mr-gentleman-shinjuku.com",
+          notes: "精緻日式與洋食餐飲體驗",
+          tag: "餐廳",
+          lat: 35.6938,
+          lng: 139.7035,
+          image: "https://tw.tabiiro.travel/lpimg/gourmet/315577/main/img2.jpg"
+        },
+        {
+          id: "raku-shinjuku",
+          name: "やまと 楽 (Yamato Raku)",
+          url: "https://maps.app.goo.gl/pV4Ki7Bzum2awmiy5",
+          socialUrl: "http://www.raku-shinjuku.jp/",
+          notes: "位於新宿 Rainbow Village 4F，正宗日本料理",
+          tag: "日本料理",
+          lat: 35.6938,
+          lng: 139.7035,
+          image: "https://www.raku-shinjuku.jp/img/top/img2.jpg"
+        },
+        {
+          id: "mihama-shinjuku",
+          name: "酒場 Mihama (Sakaba Mihama)",
+          url: "https://maps.app.goo.gl/43gCYWfCskanSv3dA",
+          notes: "新宿在地人氣居酒屋",
+          tag: "居酒屋",
+          lat: 35.6938,
+          lng: 139.7035,
+          image: "https://tblg.k-img.com/restaurant/images/Rvw/313490/150x150_square_c5aa59b74a9add2070968bc99011402b.jpg"
+        },
+        {
+          id: "mr-waffle-shinjuku",
+          name: "Mr. Waffle LUMINE新宿店",
+          address: "東京都新宿區新宿 3-38-2 ルミネ新宿2 1F",
+          url: "https://www.google.com/maps/search/?api=1&query=Mr.Waffle+LUMINE+Shinjuku",
+          socialUrl: "https://mr-waffle.com/",
+          notes: "外帶ワッフル專門店，推薦原味與季節限定口味。位置便利，買完可以直接帶走當點心。",
+          tag: "排隊點心",
+          lat: 35.6897,
+          lng: 139.7003,
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ZTFCmIiwzUjj7JxXatamm3DEbMtk9ejceg&s"
+        },
+        {
+          id: "kenyan-shibuya",
+          name: "紅茶の店 Kenyan (涉谷店)",
+          address: "東京都渋谷區神南 1-14-8 南部ビル 1F",
+          url: "https://tabelog.com/tokyo/A1303/A130301/13001859/",
+          notes: "老牌紅茶專賣店，招牌「アイミティー」 (皇家奶茶) 醇厚香濃，是澀谷人的口袋名單。",
+          tag: "經典奶茶",
+          lat: 35.6631,
+          lng: 139.7005,
+          image: "https://shinblog.com.tw/wp-content/uploads/2024/12/IMG_1512-2048x1536.jpg"
+        },
+        {
+          id: "kaneko-hannosuke",
+          name: "稻庭烏龍麵 金子半之助 Coredo室町店",
+          url: "https://maps.app.goo.gl/RkVYBJMKkU3B48Ja9",
+          socialUrl: "https://kaneko-hannosuke.com/",
+          notes: "經典稻庭烏龍麵與天丼名店",
+          tag: "日式麵食",
+          lat: 35.6853,
+          lng: 139.7745,
+          image: "https://anise.tw/wp-content/uploads/2018/09/1537376733-64b4b495e38636e9c0f0dde3991589d6.jpg"
+        }
+      ],
+      sightseeing: [
+        {
+          id: "shibuya-sky",
+          name: "澀谷 SKY (SHIBUYA SKY)",
+          address: "東京都渋谷區渋谷 2-24-12 (澀谷 Scramble Square)",
+          url: "https://maps.app.goo.gl/A2UPZcME2uNHidG88",
+          socialUrl:"https://www.shibuya-scramble-square.com.c.apy.hpcn.transer-cn.com/sky/",
+          notes: "360度展望台，可俯瞰澀谷十字路口與富士山。建議預約黃昏時段，門票非常搶手。",
+          tag: "景點/展望台",
+          lat: 35.6585,
+          lng: 139.7023,
+          image: "https://blog-static.kkday.com/zh-tw/blog/wp-content/uploads/2023/04/batch_IMG_2904.jpg"
+        },
+        {
+          id: "gotokuji",
+          name: "豪德寺 (Gotokuji Temple)",
+          address: "東京都世田谷區豪德寺 2-24-7",
+          url: "https://maps.app.goo.gl/2xq3qCZAxkMmP4gz5",
+          socialUrl: "https://gotokuji.jp/en/",
+          notes: "著名的招財貓發源地，寺內擺放上千隻貓咪，非常壯觀且療癒。免費參觀。",
+          tag: "景點",
+          lat: 35.6482,
+          lng: 139.6477,
+          image: "https://couplehuang.com/wp-content/uploads/2026/02/54210772513_5d53b5f395_o.jpg"
+        },
+        {
+          id: "kitte-garden",
+          name: "KITTE花園 (KITTE Garden)",
+          address: "東京都千代爾區丸之內 2-7-2 (6F)",
+          url: "https://www.google.com/maps/search/?api=1&query=KITTE+Marunouchi+Tokyo",
+          notes: "位於 KITTE 大樓 6 樓的露天屋頂花園，可以近距離俯瞰東京車站紅磚建築，夜景尤佳。免費入場。",
+          tag: "景點/夜景",
+          lat: 35.6798,
+          lng: 139.7648,
+          image: "https://nightscape.tokyo/tw/wp-content/uploads/2023/01/kitte-garden-observatory-4.jpg"
+        },
+        {
+          id: "university-of-tokyo",
+          name: "東京大學 (University of Tokyo)",
+          address: "東京都文京區本鄉 7-3-1",
+          url: "https://www.google.com/maps/search/?api=1&query=University+of+Tokyo+Hongo+Campus",
+          socialUrl: "https://lifewith-nao.com/tokyo-university-guide/",
+          notes: "日本最高學府，校園充滿古蹟與學術氣息。秋天（11月下旬）的銀杏大道非常壯觀，必看赤門與安田講堂。",
+          tag: "景點",
+          lat: 35.712,
+          lng: 139.762,
+          image: "https://media.istockphoto.com/id/2095893590/zh/%E7%85%A7%E7%89%87/yasuda-auditorium-at-the-university-of-tokyo-in-tokyo-japan.jpg?s=612x612&w=0&k=20&c=bCrZt9lWIXjFWlQIhvboTZwxL7svS_1bueQWpQDlFfQ="
+        }
+      ],
+      shopping: [
+        {
+          id: "3coins-harajuku",
+          name: "3COINS 原宿旗艦店",
+          address: "東京都渋谷區神宮前 6-12-22 秋田ビル 1F",
+          url: "https://www.google.com/maps/search/?api=1&query=3COINS+Harajuku+Flagship",
+          socialUrl:"https://www.palcloset.jp/3coins/",
+          notes: "3COINS 全國首間旗艦店，品項最齊全，還有原宿限定商品與美食區 (GOOD MOOD FOOD)。",
+          tag: "300円雜貨",
+          lat: 35.6669,
+          lng: 139.7061,
+          image: "https://content.fun-japan.jp/renewal-prod/cms/articles/content/3e856baea3c133cdd3d02ad19d9fdcad4aa34abd_2026-01-27-06-15-17.jpg"
+        },
+        {
+          id: "os-drug-shinjuku",
+          name: "OS Drug (オーエスドラッグ 新宿西口店)",
+          address: "東京都新宿區西新宿 1-8-1",
+          url: "https://www.google.com/maps/search/?api=1&query=OS+Drug+Shinjuku+Nishiguchi",
+          notes: "以價格極具競爭力著稱的藥妝店，雖然裝潢樸素且通常僅收現金，但價格往往是市區最便宜的。",
+          tag: "平價藥妝",
+          lat: 35.6917,
+          lng: 139.6997,
+          image: "https://finduheart.com/wp-content/uploads/2025/11/20251022225937_0_1bdc35.jpg"
+        },
+        {
+          id: "l-breath-shinjuku",
+          name: "L-Breath 新宿旗艦店",
+          address: "東京都新宿區新宿 4-1-11",
+          url: "https://www.google.com/maps/search/?api=1&query=L-Breath+Shinjuku+Flagship",
+          notes: "整棟 9 層樓的戶外用品天堂，涵蓋露營、健行、攀岩。各大戶外品牌 (Patagonia, North Face 等) 一次逛足。",
+          tag: "戶外用品旗艦",
+          lat: 35.6896,
+          lng: 139.7025,
+          image: "https://resources.matcha-jp.com/resize/720x2000/2024/04/25-178193.webp"
+        },
+        {
+          id: "nanga-harajuku",
+          name: "NANGA SHOP Harajuku",
+          address: "東京都渋谷區神宮前 6-16-19 原宿WATビル 101",
+          url: "https://nanga.jp/shop/harajuku/",
+          socialUrl:"https://store.nanga.jp/blogs/snap/nanga-shop-harajuku-3?srsltid=AfmBOooAcLP45jeKvTj5-nf9FmxDh_1y-MGRwsNTAf_yxi-6rt3tZ_gd",
+          notes: "日本頂級羽絨品牌，旗艦店提供各式高品質睡袋、羽絨衣及配件，是戶外玩家必訪的細節控品牌。",
+          tag: "頂級羽絨",
+          lat: 35.6661,
+          lng: 139.7058,
+          image: "https://nanga.jp/-/wp-content/uploads/2025/11/E6A9390-scaled.jpg"
+        },
+        {
+          id: "montbell-ikebukuro",
+          name: "mont-bell 池袋東武店",
+          address: "東京都豐島區西池袋 1-1-25 東武百貨店 池袋店 11F",
+          url: "https://www.google.com/maps/search/?api=1&query=mont-bell+Ikebukuro+Tobu",
+          socialUrl:"https://www.montbell.jp/",
+          notes: "日本國民戶外品牌，款式多樣。持東武百貨外國遊客優惠券 (Tobu Guest Card) 可享 5% 折扣，還可辦理退稅。",
+          tag: "95折+免稅",
+          lat: 35.7303,
+          lng: 139.7111,
+          image: "https://store.montbell.jp/search/detail_img/678596/guide/btm_left_1.jpg"
+        },
+        {
+          id: "calafate-mejiro",
+          name: "Calafate カラファテ (目白)",
+          address: "東京都新宿區下落合 3-2-12",
+          url: "https://maps.app.goo.gl/hsf5yzfDfrmVTQRd7",
+          socialUrl:"https://www.calafate.co.jp/",
+          notes: "登山與攀岩愛好者的專業名店，提供海量攀岩鞋與專業技術裝備，店員多為資深登山者。",
+          tag: "專業攀岩用品",
+          lat: 35.7208,
+          lng: 139.7064,
+          image: "https://calafate.co.jp/img/usr/pages/main_mejiro.jpg"
+        },
+        {
+          id: "alpen-tokyo",
+          name: "Alpen TOKYO (新宿旗艦店)",
+          address: "東京都新宿區新宿 3-23-7",
+          url: "https://www.google.com/maps/search/?api=1&query=Alpen+TOKYO+Shinjuku+3-23-7",
+          socialUrl: "https://store.alpen-group.jp/alpentokyo/CSfTokyoTop.jsp",
+          notes: "新宿最大的體育、戶外用品旗艦店，整棟 10 層樓涵蓋 Sports Depo、Alpen Outdoors 及 Golf 5。",
+          tag: "購物",
+          lat: 35.693,
+          lng: 139.701,
+          image: "https://www.bubu-jp.com/wp-content/uploads/1990/05/6f3da136fef9f68936666137b17c06b6.jpg"
+        },
+        {
+          id: "kitamura-camera",
+          name: "北村相機店 (新宿旗艦店)",
+          address: "東京都新宿區新宿 3-26-14",
+          url: "https://maps.app.goo.gl/kXLcBYhxSjcbZnwF9",
+          socialUrl: "https://www.kitamuracamera.jp/",
+          notes: "相機愛好者的主題樂園，提供海量新舊相機、徠卡專區及咖啡廳。",
+          tag: "購物",
+          lat: 35.6917,
+          lng: 139.702,
+          image: "https://www.kitamuracamera.jp/wp-content/uploads/2024/08/20240619-A7402129-e1724385437876.jpg"
+        },
+        {
+          id: "tokyu-hands",
+          name: "東急手創館 HANDS",
+          url: "https://www.google.com/maps/search/東急手創館 HANDS 東京",
+          socialUrl: "https://www.instagram.com/explore/tags/tokyuhands/",
+          notes: "東京文具聖地",
+          lat: 35.687,
+          lng: 139.702,
+          image: "https://svcstrg.cld.navitime.jp/imgfile/02301_14410351_02.jpg"
+        },
+        {
+          id: "loft",
+          name: "Loft",
+          url: "https://www.google.com/maps/search/loft 東京",
+          socialUrl: "https://www.loft.co.jp/",
+          notes: "東京文具聖地",
+          lat: 35.661,
+          lng: 139.700,
+          image: "https://cdn.bountyhunter.co/file/3c623675-f6c3-4a07-9daf-11b9d4926c64.jpg"
+        },
+        {
+          id: "itoya",
+          name: "伊東屋 Ito-ya",
+          url: "https://www.google.com/maps/search/伊東屋 Ito-ya 東京",
+          socialUrl: "https://www.ito-ya.co.jp/",
+          notes: "東京文具聖地",
+          lat: 35.672,
+          lng: 139.767,
+          image: "https://media.walkerland.com.tw/wlk_media/thumbnail/images/upload/jnews/2019/11/9bdaf7b40a74aaae76b7a7a3d86aa28129d73570-800x533.webp"
+        },
+        {
+          id: "travelers-factory",
+          name: "Traveler's Factory",
+          url: "https://www.google.com/maps/search/Traveler's Factory",
+          socialUrl: "https://www.facebook.com/travelersfactory/?fref=ts",
+          notes: "東京文具聖地",
+          lat: 35.644,
+          lng: 139.697,
+          image: "https://www.travelers-company.com/wp-content/uploads/2015/10/tfa_station.png"
+        }
+      ]
+    },
     karuizawa: {
       blackCard: {
         title: "輕井澤一日遊",
@@ -595,6 +763,8 @@ export const tripData = {
     checkIn: "上午 10:00",
     notes: "這是我們這趟旅程確定入住的 Airbnb。提供 3 間臥室，最多可容納 10 名房客。",
     address: "墨田區, 東京都, 日本",
+    lat: 35.7079315,
+    lng: 139.8038963,
     image: "https://tse1.mm.bing.net/th?q=%E6%B5%85%E8%8D%89+%E6%99%B4%E7%A9%BA%E5%A1%94+Airbnb&w=800&c=7&rs=1&pid=1.7"
   },
   mountFuji: {
