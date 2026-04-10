@@ -25,49 +25,36 @@
 
     <!-- Content Area -->
     <main class="content-area">
-      <!-- Standard Themes (Fuji, Tokyo Food, Stationery) -->
-      <div v-if="activeMainTab !== 'karuizawa'" class="theme-content">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <GlassCard
-            v-for="item in currentThemeData"
-            :key="item.id"
-            v-bind="item"
-            :title="item.name"
-          />
-        </div>
-      </div>
-
-      <!-- Karuizawa Special Layout (with sub-tabs) -->
-      <div v-else class="karuizawa-content">
-
+      <!-- Complex Layout with Sub-tabs (Tokyo, Karuizawa) -->
+      <div v-if="hasSubTabs(activeMainTab)" class="complex-content">
         <div class="sub-tabs-container glass-panel p-1 mb-4">
           <div class="sub-tabs-list">
             <button 
-              v-for="subTab in karuizawaTabs" 
+              v-for="subTab in getSubTabs(activeMainTab)" 
               :key="subTab.id"
-              @click="activeKaruizawaTab = subTab.id"
+              @click="setActiveSubTab(activeMainTab, subTab.id)"
               class="sub-tab-btn"
-              :class="{ 'active': activeKaruizawaTab === subTab.id }"
+              :class="{ 'active': getActiveSubTab(activeMainTab) === subTab.id }"
             >
               {{ subTab.label }}
             </button>
           </div>
         </div>
 
-        <!-- Karuizawa Cards -->
-        <div v-if="activeKaruizawaTab !== 'tips'" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Cards Container -->
+        <div v-if="getActiveSubTab(activeMainTab) !== 'tips'" class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <GlassCard
-            v-for="item in karuizawaData[activeKaruizawaTab]"
+            v-for="item in currentTabData[getActiveSubTab(activeMainTab)]"
             :key="item.id"
             v-bind="item"
             :title="item.name"
           />
         </div>
 
-        <!-- Karuizawa Tips -->
+        <!-- Tips Section (if any) -->
         <div v-else class="tips-container">
           <div 
-            v-for="(tip, index) in karuizawaData.tips" 
+            v-for="(tip, index) in currentTabData.tips" 
             :key="index"
             class="tip-card glass-panel p-4 mb-4"
           >
@@ -77,6 +64,18 @@
             </h4>
             <p class="text-secondary leading-relaxed">{{ tip.desc }}</p>
           </div>
+        </div>
+      </div>
+
+      <!-- Standard Layout (Simple Lists like Fuji) -->
+      <div v-else class="standard-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <GlassCard
+            v-for="item in currentTabData"
+            :key="item.id"
+            v-bind="item"
+            :title="item.name"
+          />
         </div>
       </div>
     </main>
@@ -93,31 +92,45 @@ const route = useRoute();
 
 // Main Tabs config
 const mainTabs = [
-  { id: 'karuizawa', label: '輕井澤', icon: 'forest' },
-  { id: 'tokyoFood', label: '東京美食', icon: 'restaurant' },
-  { id: 'fuji', label: '富士山之旅', icon: 'landscape' },
-  { id: 'stationery', label: '文具聖地', icon: 'edit_note' }
+   { id: 'karuizawa', label: '輕井澤', icon: 'forest' },
+  { id: 'tokyo', label: '東京', icon: 'location_city' },
+  { id: 'fuji', label: '富士山之旅', icon: 'landscape' }
 ];
 
-const activeMainTab = ref('karuizawa');
+const activeMainTab = ref('tokyo');
 
-// Karuizawa Sub-tabs config
-const karuizawaTabs = [
-  { id: 'sightseeing', label: '景點' },
-  { id: 'food', label: '美食' },
-  { id: 'experience', label: '體驗' },
-  { id: 'tips', label: 'Tips' }
-];
+// Sub-tabs config
+const subTabsConfig = {
+  tokyo: [
+    { id: 'sightseeing', label: '景點' },
+    { id: 'food', label: '美食' },
+    { id: 'shopping', label: '購物' }
+  ],
+  karuizawa: [
+    { id: 'sightseeing', label: '景點' },
+    { id: 'food', label: '美食' },
+    { id: 'experience', label: '體驗' },
+    { id: 'tips', label: 'Tips' }
+  ]
+};
 
-const activeKaruizawaTab = ref('sightseeing');
-
-// Data mappings
-const currentThemeData = computed(() => {
-  return tripData.themedTravel[activeMainTab.value] || [];
+// State for active sub-tabs
+const activeSubTabs = ref({
+  tokyo: 'sightseeing',
+  karuizawa: 'sightseeing'
 });
 
-const karuizawaData = computed(() => {
-  return tripData.themedTravel.karuizawa || {};
+// Helper functions
+const hasSubTabs = (tabId) => !!subTabsConfig[tabId];
+const getSubTabs = (tabId) => subTabsConfig[tabId] || [];
+const getActiveSubTab = (tabId) => activeSubTabs.value[tabId];
+const setActiveSubTab = (tabId, subTabId) => {
+  activeSubTabs.value[tabId] = subTabId;
+};
+
+// Data mapping
+const currentTabData = computed(() => {
+  return tripData.themedTravel[activeMainTab.value] || [];
 });
 
 onMounted(() => {
